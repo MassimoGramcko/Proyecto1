@@ -17,6 +17,7 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
+        tab1.setBackground(Color.black);
     }
 
     /**
@@ -206,7 +207,7 @@ public class Interfaz extends javax.swing.JFrame {
         Inicio.setBackground(new java.awt.Color(153, 153, 153));
         Inicio.setLayout(new javax.swing.OverlayLayout(Inicio));
 
-        Pagina1.setBackground(new java.awt.Color(0, 102, 204));
+        Pagina1.setBackground(new java.awt.Color(255, 153, 51));
 
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
         Pagina1.setLayout(Pagina1Layout);
@@ -221,7 +222,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Inicio.add(Pagina1);
 
-        Pagina2.setBackground(new java.awt.Color(255, 102, 0));
+        Pagina2.setBackground(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
@@ -236,7 +237,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Inicio.add(Pagina2);
 
-        Pagina3.setBackground(new java.awt.Color(102, 255, 0));
+        Pagina3.setBackground(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout Pagina3Layout = new javax.swing.GroupLayout(Pagina3);
         Pagina3.setLayout(Pagina3Layout);
@@ -251,7 +252,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Inicio.add(Pagina3);
 
-        Pagina4.setBackground(new java.awt.Color(0, 255, 255));
+        Pagina4.setBackground(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout Pagina4Layout = new javax.swing.GroupLayout(Pagina4);
         Pagina4.setLayout(Pagina4Layout);

@@ -294,7 +294,7 @@
         <Container class="javax.swing.JPanel" name="Pagina1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="66" red="0" type="rgb"/>
+              <Color blue="33" green="99" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -314,7 +314,7 @@
         <Container class="javax.swing.JPanel" name="Pagina2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="66" red="ff" type="rgb"/>
+              <Color blue="0" green="99" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -334,7 +334,7 @@
         <Container class="javax.swing.JPanel" name="Pagina3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="ff" red="66" type="rgb"/>
+              <Color blue="0" green="99" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
@@ -354,7 +354,7 @@
         <Container class="javax.swing.JPanel" name="Pagina4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="0" type="rgb"/>
+              <Color blue="0" green="99" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
