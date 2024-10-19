@@ -8,7 +8,7 @@ package proyecto1;
  *
  * @author massi
  */
-public class Main {
+public class Prueba {
 
     /**
      * @param args the command line arguments
