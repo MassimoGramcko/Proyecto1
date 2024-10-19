@@ -4,6 +4,8 @@
  */
 package proyecto1;
 
+import java.awt.Color;
+
 /**
  *
  * @author massi
@@ -76,6 +78,11 @@ public class Interfaz extends javax.swing.JFrame {
         );
 
         tab2.setBackground(new java.awt.Color(102, 102, 102));
+        tab2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab2MouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,6 +106,11 @@ public class Interfaz extends javax.swing.JFrame {
         );
 
         tab3.setBackground(new java.awt.Color(102, 102, 102));
+        tab3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab3MouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,6 +135,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         tab4.setBackground(new java.awt.Color(102, 102, 102));
         tab4.setForeground(new java.awt.Color(102, 102, 102));
+        tab4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab4MouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,14 +176,14 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(tab2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,8 +204,9 @@ public class Interfaz extends javax.swing.JFrame {
         );
 
         Inicio.setBackground(new java.awt.Color(153, 153, 153));
+        Inicio.setLayout(new javax.swing.OverlayLayout(Inicio));
 
-        Pagina1.setBackground(new java.awt.Color(153, 153, 153));
+        Pagina1.setBackground(new java.awt.Color(0, 102, 204));
 
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
         Pagina1.setLayout(Pagina1Layout);
@@ -201,7 +219,9 @@ public class Interfaz extends javax.swing.JFrame {
             .addGap(0, 425, Short.MAX_VALUE)
         );
 
-        Pagina2.setBackground(new java.awt.Color(153, 153, 153));
+        Inicio.add(Pagina1);
+
+        Pagina2.setBackground(new java.awt.Color(255, 102, 0));
 
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
@@ -214,7 +234,9 @@ public class Interfaz extends javax.swing.JFrame {
             .addGap(0, 399, Short.MAX_VALUE)
         );
 
-        Pagina3.setBackground(new java.awt.Color(153, 153, 153));
+        Inicio.add(Pagina2);
+
+        Pagina3.setBackground(new java.awt.Color(102, 255, 0));
 
         javax.swing.GroupLayout Pagina3Layout = new javax.swing.GroupLayout(Pagina3);
         Pagina3.setLayout(Pagina3Layout);
@@ -227,58 +249,22 @@ public class Interfaz extends javax.swing.JFrame {
             .addGap(0, 399, Short.MAX_VALUE)
         );
 
-        Pagina4.setBackground(new java.awt.Color(153, 153, 153));
+        Inicio.add(Pagina3);
+
+        Pagina4.setBackground(new java.awt.Color(0, 255, 255));
 
         javax.swing.GroupLayout Pagina4Layout = new javax.swing.GroupLayout(Pagina4);
         Pagina4.setLayout(Pagina4Layout);
         Pagina4Layout.setHorizontalGroup(
             Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
+            .addGap(0, 567, Short.MAX_VALUE)
         );
         Pagina4Layout.setVerticalGroup(
             Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout InicioLayout = new javax.swing.GroupLayout(Inicio);
-        Inicio.setLayout(InicioLayout);
-        InicioLayout.setHorizontalGroup(
-            InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pagina1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(InicioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Pagina2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(InicioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Pagina3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(InicioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Pagina4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        InicioLayout.setVerticalGroup(
-            InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Pagina1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(InicioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Pagina2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(InicioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Pagina3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(InicioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Pagina4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        Inicio.add(Pagina4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -303,7 +289,44 @@ public class Interfaz extends javax.swing.JFrame {
    Pagina2.setVisible(false);
    Pagina3.setVisible(false);
    Pagina4.setVisible(false);
+   tab1.setBackground(Color.black);
+   tab2.setBackground(new Color (102,102,102));
+   tab3.setBackground(new Color (102,102,102));
+   tab4.setBackground(new Color (102,102,102));
     }//GEN-LAST:event_tab1MouseClicked
+
+    private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
+   Pagina2.setVisible(true);
+   Pagina1.setVisible(false);
+   Pagina3.setVisible(false);
+   Pagina4.setVisible(false);
+   tab2.setBackground(Color.black);
+   tab1.setBackground(new Color (102,102,102));
+   tab3.setBackground(new Color (102,102,102));
+   tab4.setBackground(new Color (102,102,102));
+    }//GEN-LAST:event_tab2MouseClicked
+
+    private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
+   Pagina3.setVisible(true);
+   Pagina2.setVisible(false);
+   Pagina1.setVisible(false);
+   Pagina4.setVisible(false);
+   tab3.setBackground(Color.black);
+   tab2.setBackground(new Color (102,102,102));
+   tab1.setBackground(new Color (102,102,102));
+   tab4.setBackground(new Color (102,102,102));
+    }//GEN-LAST:event_tab3MouseClicked
+
+    private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
+   Pagina4.setVisible(true);
+   Pagina3.setVisible(false);
+   Pagina2.setVisible(false);
+   Pagina1.setVisible(false);
+   tab4.setBackground(Color.black);
+   tab2.setBackground(new Color (102,102,102));
+   tab3.setBackground(new Color (102,102,102));
+   tab1.setBackground(new Color (102,102,102));
+    }//GEN-LAST:event_tab4MouseClicked
 
     /**
      * @param args the command line arguments
