@@ -41,9 +41,11 @@ public class Interfaz extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         Inicio = new javax.swing.JPanel();
         Pagina1 = new javax.swing.JPanel();
-        exitBtn = new javax.swing.JPanel();
-        exitTxt = new javax.swing.JLabel();
+        exitBtn1 = new javax.swing.JPanel();
+        exitTxt1 = new javax.swing.JLabel();
         Pagina2 = new javax.swing.JPanel();
+        exitBtn2 = new javax.swing.JPanel();
+        exitTxt2 = new javax.swing.JLabel();
         Pagina3 = new javax.swing.JPanel();
         Pagina4 = new javax.swing.JPanel();
 
@@ -221,35 +223,35 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        exitBtn.setBackground(new java.awt.Color(255, 153, 51));
+        exitBtn1.setBackground(new java.awt.Color(255, 153, 51));
 
-        exitTxt.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exitTxt.setText("X");
-        exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
-        exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+        exitTxt1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        exitTxt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitTxt1.setText("X");
+        exitTxt1.setPreferredSize(new java.awt.Dimension(40, 40));
+        exitTxt1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitTxtMouseClicked(evt);
+                exitTxt1MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                exitTxtMouseEntered(evt);
+                exitTxt1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                exitTxtMouseExited(evt);
+                exitTxt1MouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout exitBtnLayout = new javax.swing.GroupLayout(exitBtn);
-        exitBtn.setLayout(exitBtnLayout);
-        exitBtnLayout.setHorizontalGroup(
-            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
+        javax.swing.GroupLayout exitBtn1Layout = new javax.swing.GroupLayout(exitBtn1);
+        exitBtn1.setLayout(exitBtn1Layout);
+        exitBtn1Layout.setHorizontalGroup(
+            exitBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtn1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(exitTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        exitBtnLayout.setVerticalGroup(
-            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        exitBtn1Layout.setVerticalGroup(
+            exitBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
@@ -258,28 +260,71 @@ public class Interfaz extends javax.swing.JFrame {
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
                 .addGap(0, 648, Short.MAX_VALUE)
-                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Pagina1Layout.setVerticalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina1Layout.createSequentialGroup()
-                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 407, Short.MAX_VALUE))
         );
 
         Inicio.add(Pagina1);
 
         Pagina2.setBackground(new java.awt.Color(255, 153, 0));
+        Pagina2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                Pagina2MouseDragged(evt);
+            }
+        });
+        Pagina2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Pagina2MousePressed(evt);
+            }
+        });
+
+        exitBtn2.setBackground(new java.awt.Color(255, 153, 0));
+        exitBtn2.setPreferredSize(new java.awt.Dimension(40, 40));
+
+        exitTxt2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        exitTxt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitTxt2.setText("X");
+        exitTxt2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitTxt2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitTxt2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitTxt2MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitBtn2Layout = new javax.swing.GroupLayout(exitBtn2);
+        exitBtn2.setLayout(exitBtn2Layout);
+        exitBtn2Layout.setHorizontalGroup(
+            exitBtn2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        exitBtn2Layout.setVerticalGroup(
+            exitBtn2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
         Pagina2Layout.setHorizontalGroup(
             Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 688, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina2Layout.createSequentialGroup()
+                .addGap(0, 648, Short.MAX_VALUE)
+                .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Pagina2Layout.setVerticalGroup(
             Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 447, Short.MAX_VALUE)
+            .addGroup(Pagina2Layout.createSequentialGroup()
+                .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 407, Short.MAX_VALUE))
         );
 
         Inicio.add(Pagina2);
@@ -388,17 +433,40 @@ public class Interfaz extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse); // Direccion del eje X y eje Y del mouse 
     }//GEN-LAST:event_Pagina1MouseDragged
 
-    private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
+    private void exitTxt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseClicked
        System.exit(0); // Salida del programa
-    }//GEN-LAST:event_exitTxtMouseClicked
+    }//GEN-LAST:event_exitTxt1MouseClicked
 
-    private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
-        exitBtn.setBackground(Color.red); // Coloca el color rojo al seleccionarlo
-    }//GEN-LAST:event_exitTxtMouseEntered
+    private void exitTxt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseEntered
+        exitBtn1.setBackground(Color.red); // Coloca el color rojo al seleccionarlo
+    }//GEN-LAST:event_exitTxt1MouseEntered
 
-    private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
-        exitBtn.setBackground(new Color (255,153,51)); // Devuelve el color del background
-    }//GEN-LAST:event_exitTxtMouseExited
+    private void exitTxt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseExited
+        exitBtn1.setBackground(new Color (255,153,51)); // Devuelve el color del background
+    }//GEN-LAST:event_exitTxt1MouseExited
+
+    private void Pagina2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pagina2MousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_Pagina2MousePressed
+
+    private void Pagina2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pagina2MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_Pagina2MouseDragged
+
+    private void exitTxt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt2MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitTxt2MouseClicked
+
+    private void exitTxt2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt2MouseEntered
+        exitBtn2.setBackground(Color.red);
+    }//GEN-LAST:event_exitTxt2MouseEntered
+
+    private void exitTxt2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt2MouseExited
+        exitBtn2.setBackground(new Color (255,153,51));
+    }//GEN-LAST:event_exitTxt2MouseExited
 
     /**
      * @param args the command line arguments
@@ -441,8 +509,10 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel Pagina2;
     private javax.swing.JPanel Pagina3;
     private javax.swing.JPanel Pagina4;
-    private javax.swing.JPanel exitBtn;
-    private javax.swing.JLabel exitTxt;
+    private javax.swing.JPanel exitBtn1;
+    private javax.swing.JPanel exitBtn2;
+    private javax.swing.JLabel exitTxt1;
+    private javax.swing.JLabel exitTxt2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
