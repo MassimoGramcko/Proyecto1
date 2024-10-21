@@ -13,20 +13,43 @@ public class classLista {
 }
 
 class Lista <T> {
-    Nodo<T> inicio = null; 
-    Nodo<T> cola = null;
+    private Nodo<T> inicio = null; 
+    private Nodo<T> cola = null;
+
+    public Lista() {
+        this.inicio = null;
+        this.cola = null;
+    }
+
+    public Nodo<T> getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Nodo<T> inicio) {
+        this.inicio = inicio;
+    }
+
+    public Nodo<T> getCola() {
+        return cola;
+    }
+
+    public void setCola(Nodo<T> cola) {
+        this.cola = cola;
+    }
     
-    public void Agregar (T v){
+    
+    
+       public void Agregar (T v){
         if (this.inicio== null){
             this.inicio= new Nodo<T>(v);
-            this.inicio.siguiente= this.cola;
+            this.inicio.setSiguiente(this.cola);
             this.cola = this.inicio;
             return;
                 
                     
         }
-        this.cola.siguiente= new Nodo<T>(v);
-        this.cola= this.cola.siguiente;
+        this.cola.setSiguiente(new Nodo<T>(v));
+        this.cola= this.cola.getSiguiente();
     }
     
 }
