@@ -23,20 +23,19 @@ import javax.swing.JLabel;
  * @author massi
  */
 public class Interfaz extends javax.swing.JFrame {
-    
+
     int xMouse, yMouse;
-    
+
     private ImageIcon imagen;
     private Icon icono;
-    
-    
+
     public Interfaz() {
         initComponents();
         tab1.setBackground(Color.black);
         this.setLocationRelativeTo(this);
-        
-        this.pintarImagen(this.Icono, "src/Img/Imagen.png");
-        
+
+        this.pintarImagen(this.Icono1, "src/Img/Caracas.png");
+        this.pintarImagen(this.Icono2, "src/Img/Bogota.png");
     }
 
     /**
@@ -57,16 +56,20 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         tab4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        Nombre = new javax.swing.JLabel();
         Inicio = new javax.swing.JPanel();
         Pagina1 = new javax.swing.JPanel();
         exitBtn1 = new javax.swing.JPanel();
         exitTxt1 = new javax.swing.JLabel();
-        Icono = new javax.swing.JLabel();
+        Icono1 = new javax.swing.JLabel();
+        Icono2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Pagina2 = new javax.swing.JPanel();
         exitBtn2 = new javax.swing.JPanel();
         exitTxt2 = new javax.swing.JLabel();
+        BtnRed = new javax.swing.JButton();
         Pagina3 = new javax.swing.JPanel();
         exitBtn3 = new javax.swing.JPanel();
         exitTxt3 = new javax.swing.JLabel();
@@ -191,12 +194,17 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel6.setFont(new java.awt.Font("Dubai", 1, 30)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText(" SUCURSALES");
+        Titulo.setFont(new java.awt.Font("Dubai", 1, 30)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText(" SUCURSALES");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+
+        Nombre.setFont(new java.awt.Font("Script MT Bold", 1, 18)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(255, 153, 0));
+        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nombre.setText("MetroMarket");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -208,21 +216,27 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(1, 1, 1)
+                .addComponent(Nombre)
+                .addGap(18, 18, 18)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,6 +251,7 @@ public class Interfaz extends javax.swing.JFrame {
         Inicio.setLayout(new javax.swing.OverlayLayout(Inicio));
 
         Pagina1.setBackground(new java.awt.Color(255, 153, 0));
+        Pagina1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Pagina1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 Pagina1MouseDragged(evt);
@@ -279,30 +294,48 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(exitTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Icono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        Icono1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        Icono2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("¡Bienvenido!");
 
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
         Pagina1.setLayout(Pagina1Layout);
         Pagina1Layout.setHorizontalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina1Layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(exitBtn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
-                        .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61))))
+                .addGap(33, 33, 33)
+                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Icono1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(Icono2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Pagina1Layout.setVerticalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina1Layout.createSequentialGroup()
                 .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 223, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
+                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Pagina1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Pagina1Layout.createSequentialGroup()
+                        .addContainerGap(34, Short.MAX_VALUE)
+                        .addComponent(Icono1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(Icono2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33))
         );
 
-        Icono.getAccessibleContext().setAccessibleName("Icono");
+        Icono1.getAccessibleContext().setAccessibleName("Icono");
 
         Inicio.add(Pagina1);
 
@@ -347,19 +380,32 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(exitTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
+        BtnRed.setText("Cargar red");
+        BtnRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
         Pagina2Layout.setHorizontalGroup(
             Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina2Layout.createSequentialGroup()
-                .addGap(0, 648, Short.MAX_VALUE)
+                .addGap(0, 728, Short.MAX_VALUE)
                 .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Pagina2Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(BtnRed)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pagina2Layout.setVerticalGroup(
             Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina2Layout.createSequentialGroup()
                 .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 446, Short.MAX_VALUE))
+                .addGap(198, 198, 198)
+                .addComponent(BtnRed)
+                .addGap(0, 223, Short.MAX_VALUE))
         );
 
         Inicio.add(Pagina2);
@@ -410,14 +456,14 @@ public class Interfaz extends javax.swing.JFrame {
         Pagina3Layout.setHorizontalGroup(
             Pagina3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina3Layout.createSequentialGroup()
-                .addGap(0, 648, Short.MAX_VALUE)
+                .addGap(0, 728, Short.MAX_VALUE)
                 .addComponent(exitBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Pagina3Layout.setVerticalGroup(
             Pagina3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina3Layout.createSequentialGroup()
                 .addComponent(exitBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 446, Short.MAX_VALUE))
+                .addContainerGap(446, Short.MAX_VALUE))
         );
 
         Inicio.add(Pagina3);
@@ -468,7 +514,7 @@ public class Interfaz extends javax.swing.JFrame {
         Pagina4Layout.setHorizontalGroup(
             Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina4Layout.createSequentialGroup()
-                .addGap(0, 648, Short.MAX_VALUE)
+                .addGap(0, 728, Short.MAX_VALUE)
                 .addComponent(exitBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Pagina4Layout.setVerticalGroup(
@@ -499,47 +545,47 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
-   Pagina1.setVisible(true);
-   Pagina2.setVisible(false);
-   Pagina3.setVisible(false);
-   Pagina4.setVisible(false);
-   tab1.setBackground(Color.black);
-   tab2.setBackground(new Color (102,102,102));
-   tab3.setBackground(new Color (102,102,102));
-   tab4.setBackground(new Color (102,102,102));
+        Pagina1.setVisible(true);
+        Pagina2.setVisible(false);
+        Pagina3.setVisible(false);
+        Pagina4.setVisible(false);
+        tab1.setBackground(Color.black);
+        tab2.setBackground(new Color(102, 102, 102));
+        tab3.setBackground(new Color(102, 102, 102));
+        tab4.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab1MouseClicked
 
     private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-   Pagina2.setVisible(true);
-   Pagina1.setVisible(false);
-   Pagina3.setVisible(false);
-   Pagina4.setVisible(false);
-   tab2.setBackground(Color.black);
-   tab1.setBackground(new Color (102,102,102));
-   tab3.setBackground(new Color (102,102,102));
-   tab4.setBackground(new Color (102,102,102));
+        Pagina2.setVisible(true);
+        Pagina1.setVisible(false);
+        Pagina3.setVisible(false);
+        Pagina4.setVisible(false);
+        tab2.setBackground(Color.black);
+        tab1.setBackground(new Color(102, 102, 102));
+        tab3.setBackground(new Color(102, 102, 102));
+        tab4.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab2MouseClicked
 
     private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-   Pagina3.setVisible(true);
-   Pagina2.setVisible(false);
-   Pagina1.setVisible(false);
-   Pagina4.setVisible(false);
-   tab3.setBackground(Color.black);
-   tab2.setBackground(new Color (102,102,102));
-   tab1.setBackground(new Color (102,102,102));
-   tab4.setBackground(new Color (102,102,102));
+        Pagina3.setVisible(true);
+        Pagina2.setVisible(false);
+        Pagina1.setVisible(false);
+        Pagina4.setVisible(false);
+        tab3.setBackground(Color.black);
+        tab2.setBackground(new Color(102, 102, 102));
+        tab1.setBackground(new Color(102, 102, 102));
+        tab4.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab3MouseClicked
 
     private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
-   Pagina4.setVisible(true);
-   Pagina3.setVisible(false);
-   Pagina2.setVisible(false);
-   Pagina1.setVisible(false);
-   tab4.setBackground(Color.black);
-   tab2.setBackground(new Color (102,102,102));
-   tab3.setBackground(new Color (102,102,102));
-   tab1.setBackground(new Color (102,102,102));
+        Pagina4.setVisible(true);
+        Pagina3.setVisible(false);
+        Pagina2.setVisible(false);
+        Pagina1.setVisible(false);
+        tab4.setBackground(Color.black);
+        tab2.setBackground(new Color(102, 102, 102));
+        tab3.setBackground(new Color(102, 102, 102));
+        tab1.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab4MouseClicked
 
     private void Pagina1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pagina1MousePressed
@@ -548,14 +594,14 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_Pagina1MousePressed
 
     private void Pagina1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pagina1MouseDragged
-        
+
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse); // Direccion del eje X y eje Y del mouse 
     }//GEN-LAST:event_Pagina1MouseDragged
 
     private void exitTxt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseClicked
-       System.exit(0); // Salida del programa
+        System.exit(0); // Salida del programa
     }//GEN-LAST:event_exitTxt1MouseClicked
 
     private void exitTxt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseEntered
@@ -564,7 +610,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt1MouseEntered
 
     private void exitTxt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseExited
-        exitBtn1.setBackground(new Color (255,153,51));// Devuelve el color del background
+        exitBtn1.setBackground(new Color(255, 153, 51));// Devuelve el color del background
         exitTxt1.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt1MouseExited
 
@@ -589,12 +635,12 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt2MouseEntered
 
     private void exitTxt2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt2MouseExited
-        exitBtn2.setBackground(new Color (255,153,51));
+        exitBtn2.setBackground(new Color(255, 153, 51));
         exitTxt2.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt2MouseExited
 
     private void exitTxt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt3MouseClicked
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_exitTxt3MouseClicked
 
     private void exitTxt3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt3MouseEntered
@@ -603,7 +649,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt3MouseEntered
 
     private void exitTxt3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt3MouseExited
-        exitBtn3.setBackground(new Color (255,153,51));
+        exitBtn3.setBackground(new Color(255, 153, 51));
         exitTxt3.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt3MouseExited
 
@@ -628,7 +674,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt4MouseEntered
 
     private void exitTxt4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt4MouseExited
-       exitBtn4.setBackground(new Color (255,153,51));
+        exitBtn4.setBackground(new Color(255, 153, 51));
         exitTxt4.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt4MouseExited
 
@@ -643,11 +689,120 @@ public class Interfaz extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_Pagina4MouseDragged
 
+    private void BtnRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRedActionPerformed
+        var chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+
+        var file = chooser.getSelectedFile();
+
+        if (file != null) {
+            try {
+                var nombre = file.getName();
+                if (nombre == "caracas") {
+                    Grafo.ObtenerInstancia().T = 3;
+                } else if (nombre == "bogota") {
+                    Grafo.ObtenerInstancia().T = 10;
+                }
+
+                var contenido = new String(Files.readAllBytes(file.toPath()));
+
+                JsonParser parser = new JsonParser();
+                var element = parser.parse(contenido);
+                var sistemaDeTransporteObjecto = element.getAsJsonObject().entrySet();
+                var sistemaDeTransporte = sistemaDeTransporteObjecto.iterator().next();
+                Grafo.ObtenerInstancia().nombreSistemaDeTransporte = sistemaDeTransporte.getKey();
+
+                var lineas = sistemaDeTransporte.getValue().getAsJsonArray();
+                for (JsonElement lineaElement : lineas) {
+                    var lineaObjeto = lineaElement.getAsJsonObject().entrySet();
+                    var linea = lineaObjeto.iterator().next();
+                    String nombreDeLinea = linea.getKey();
+
+                    var estacionesArray = linea.getValue().getAsJsonArray();
+
+                    NodoGrafo ultimoNodoLeido = null;
+                    for (JsonElement estacionObject : estacionesArray) {
+                        if (estacionObject.isJsonPrimitive()) {
+                            var estacion = estacionObject.getAsString();
+
+                            if (ultimoNodoLeido == null) {
+                                ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
+                            } else {
+
+                                var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
+                                nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
+
+                                Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+
+                                ultimoNodoLeido = nuevoNodo;
+                            }
+                        }
+                    }
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        var aux = Grafo.ObtenerInstancia().nodos.getHead();
+
+        while (aux != null) {
+            System.out.print("Estacion: ");
+            System.out.print(aux.getValor().getNombreEstacion());
+
+            var aux2 = aux.getValor().getVecinos().getHead();
+
+            System.out.print(". vecinos: ");
+
+            while (aux2 != null) {
+                System.out.print(aux2.getValor().getNombreEstacion());
+                System.out.print(", ");
+                aux2 = aux2.getNext();
+            }
+
+            System.out.println();
+
+            aux = aux.getNext();
+        }
+    }
+
+    private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {
+
+        String s = (String) JOptionPane.showInputDialog(
+                this,
+                "Complete the sentence:\n"
+                + "\"Green eggs and...\"", //Texto del men insertar numero
+                "Customized Dialog",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                null,
+                "ham");
+
+        try {
+
+            int number = Integer.parseInt(s);
+            if (number <= 0) {
+                JOptionPane.showMessageDialog(this, "El numero tiene que ser mayor que cero");
+                return;
+            }
+            Grafo.ObtenerInstancia().T = number;
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese un numero valido");
+
+        }
+    }//GEN-LAST:event_BtnRedActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+    public static void main(String args[]) throws IOException {
+        Grafo.ObtenerInstancia().nodos = new Lista<NodoGrafo>();
+        Grafo.ObtenerInstancia().esNulo = true;
+        Grafo.ObtenerInstancia().nombreSistemaDeTransporte = "";
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -677,13 +832,13 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void pintarImagen(JLabel lb1, String ruta){
+
+    private void pintarImagen(JLabel lb1, String ruta) {
         this.imagen = new ImageIcon(ruta);
         this.icono = new ImageIcon(
                 this.imagen.getImage().getScaledInstance(
-                        lb1.getWidth(), 
-                        lb1.getHeight(), 
+                        lb1.getWidth(),
+                        lb1.getHeight(),
                         Image.SCALE_DEFAULT
                 )
         );
@@ -692,12 +847,16 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Icono;
+    private javax.swing.JButton BtnRed;
+    private javax.swing.JLabel Icono1;
+    private javax.swing.JLabel Icono2;
     private javax.swing.JPanel Inicio;
+    private javax.swing.JLabel Nombre;
     private javax.swing.JPanel Pagina1;
     private javax.swing.JPanel Pagina2;
     private javax.swing.JPanel Pagina3;
     private javax.swing.JPanel Pagina4;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JPanel exitBtn1;
     private javax.swing.JPanel exitBtn2;
     private javax.swing.JPanel exitBtn3;
@@ -708,9 +867,9 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel exitTxt4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel tab1;

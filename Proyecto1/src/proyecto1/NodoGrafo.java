@@ -2,31 +2,46 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyecto1;
+package Proyecto1;
 
 /**
  *
- * @author Djinn
+
+ * @author massi
  */
+public class NodoGrafo {
+    
+            private Lista<NodoGrafo> vecinos;
+            private String nombreEstacion;
+            private String nombreDeLinea;
 
-import java.util.ArrayList;
-import java.util.List;
+            public NodoGrafo(Lista<NodoGrafo> vecinos, String nombreEstacion, String nombreDeLinea) {
+                this.vecinos = vecinos;
+                this.nombreEstacion = nombreEstacion;
+                this.nombreDeLinea = nombreDeLinea;
+            }
 
+            public Lista<NodoGrafo> getVecinos() {
+                return vecinos;
+            }
 
-public class NodeGraph {
-    int vertex; 
-    List<NodeGraph> neighbors;
-    public NodeGraph(int vertex) {
-        this.vertex = vertex;
-        this.neighbors = new ArrayList<>();
-    }
-    public void addNeighbor(NodeGraph neighbor) {
-        neighbors.add(neighbor);
-    }
-    public int getVertex() {
-        return vertex;
-    }
-    public List<NodeGraph> getNeighbors() {
-        return neighbors;
-    }
+            public void setVecinos(Lista<NodoGrafo> vecinos) {
+                this.vecinos = vecinos;
+            }
+
+            public String getNombreEstacion() {
+                return nombreEstacion;
+            }
+
+            public void setNombreEstacion(String nombreEstacion) {
+                this.nombreEstacion = nombreEstacion;
+            }
+
+            public String getNombreDeLinea() {
+                return nombreDeLinea;
+            }
+
+            public void setNombreDeLinea(String nombreDeLinea) {
+                this.nombreDeLinea = nombreDeLinea;
+            }
 }
