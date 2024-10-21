@@ -11,3 +11,22 @@ package proyecto1;
 public class classLista {
     
 }
+
+class Lista <T> {
+    Nodo<T> inicio = null; 
+    Nodo<T> cola = null;
+    
+    public void Agregar (T v){
+        if (this.inicio== null){
+            this.inicio= new Nodo<T>(v);
+            this.inicio.siguiente= this.cola;
+            this.cola = this.inicio;
+            return;
+                
+                    
+        }
+        this.cola.siguiente= new Nodo<T>(v);
+        this.cola= this.cola.siguiente;
+    }
+    
+}

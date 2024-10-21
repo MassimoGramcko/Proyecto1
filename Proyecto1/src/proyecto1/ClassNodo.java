@@ -11,3 +11,12 @@ package proyecto1;
 public class ClassNodo {
     
 }
+
+class Nodo <T>{
+    Nodo<T> siguiente = null;
+    T valor;    
+    public Nodo (T v) {
+        valor = v ;
+    }
+    
+}
