@@ -2,15 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Proyecto1;
+package proyecto1;
 
 /**
  *
-
  * @author massi
  */
 public class NodoGrafo {
-    
+   
             private Lista<NodoGrafo> vecinos;
             private String nombreEstacion;
             private String nombreDeLinea;
@@ -45,3 +44,4 @@ public class NodoGrafo {
                 this.nombreDeLinea = nombreDeLinea;
             }
 }
+
