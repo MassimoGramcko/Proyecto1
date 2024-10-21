@@ -5,6 +5,14 @@
 package proyecto1;
 
 import java.awt.Color;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JFileChooser;
+import java.nio.file.Files;
 
 /**
  *
