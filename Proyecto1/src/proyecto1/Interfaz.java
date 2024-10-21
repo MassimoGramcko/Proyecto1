@@ -70,6 +70,8 @@ public class Interfaz extends javax.swing.JFrame {
         exitBtn2 = new javax.swing.JPanel();
         exitTxt2 = new javax.swing.JLabel();
         BtnRed = new javax.swing.JButton();
+        BtnMost = new javax.swing.JButton();
+        BtnT = new javax.swing.JButton();
         Pagina3 = new javax.swing.JPanel();
         exitBtn3 = new javax.swing.JPanel();
         exitTxt3 = new javax.swing.JLabel();
@@ -216,7 +218,7 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -387,6 +389,20 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        BtnMost.setText("Mostrar grafo");
+        BtnMost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostActionPerformed(evt);
+            }
+        });
+
+        BtnT.setText("Establecer T");
+        BtnT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
         Pagina2Layout.setHorizontalGroup(
@@ -397,6 +413,10 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(Pagina2Layout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(BtnRed)
+                .addGap(138, 138, 138)
+                .addComponent(BtnMost)
+                .addGap(101, 101, 101)
+                .addComponent(BtnT)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pagina2Layout.setVerticalGroup(
@@ -404,7 +424,10 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(Pagina2Layout.createSequentialGroup()
                 .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(198, 198, 198)
-                .addComponent(BtnRed)
+                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnRed)
+                    .addComponent(BtnMost)
+                    .addComponent(BtnT))
                 .addGap(0, 223, Short.MAX_VALUE))
         );
 
@@ -795,6 +818,39 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnRedActionPerformed
 
+    private void BtnMostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostActionPerformed
+        System.setProperty("org.graphstream.ui", "swing");
+
+        Graph graph = new SingleGraph("Tutorial 1");
+        Grafo.ObtenerInstancia();
+
+        var aux = Grafo.ObtenerInstancia().nodos.getHead();
+
+        while (aux != null) {
+            String Estacion;
+            Estacion = aux.getValor().getNombreEstacion();
+            graph.addNode(Estacion);
+            
+            var aux2 = aux.getValor().getVecinos().getHead();
+
+//            while (aux2 != null) {
+//                String Vecino;
+//                Vecino = aux2.getValor().getNombreEstacion();
+//                graph.addEdge(Estacion + Vecino, Estacion, Vecino);               
+//                aux2 = aux2.getNext();
+//            }
+
+            aux = aux.getNext();
+
+        }       
+
+        graph.display();
+    }//GEN-LAST:event_BtnMostActionPerformed
+
+    private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnTActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -847,7 +903,9 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMost;
     private javax.swing.JButton BtnRed;
+    private javax.swing.JButton BtnT;
     private javax.swing.JLabel Icono1;
     private javax.swing.JLabel Icono2;
     private javax.swing.JPanel Inicio;
