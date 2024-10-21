@@ -3,16 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package proyecto1;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import java.io.FileReader;
-import java.io.IOException;
-import javax.swing.JFileChooser;
-import java.nio.file.Files
-        
+      
 /**
  *
  * @author massi
