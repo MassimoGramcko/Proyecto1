@@ -849,6 +849,109 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTActionPerformed
         // TODO add your handling code here:
+        var chooser = new JFileChooser();
+chooser.showOpenDialog(null);
+
+var file = chooser.getSelectedFile();
+
+if (file != null) {
+try {
+var nombre = file.getName();
+if (nombre == "caracas") {
+Grafo.ObtenerInstancia().T = 3;
+} else if (nombre == "bogota") {
+Grafo.ObtenerInstancia().T = 10;
+}
+
+var contenido = new String(Files.readAllBytes(file.toPath()));
+
+JsonParser parser = new JsonParser();
+var element = parser.parse(contenido);
+var sistemaDeTransporteObjecto = element.getAsJsonObject().entrySet();
+var sistemaDeTransporte = sistemaDeTransporteObjecto.iterator().next();
+Grafo.ObtenerInstancia().nombreSistemaDeTransporte = sistemaDeTransporte.getKey();
+
+var lineas = sistemaDeTransporte.getValue().getAsJsonArray();
+for (JsonElement lineaElement : lineas) {
+var lineaObjeto = lineaElement.getAsJsonObject().entrySet();
+var linea = lineaObjeto.iterator().next();
+String nombreDeLinea = linea.getKey();
+
+var estacionesArray = linea.getValue().getAsJsonArray();
+
+NodoGrafo ultimoNodoLeido = null;
+for (JsonElement estacionObject : estacionesArray) {
+if (estacionObject.isJsonPrimitive()) {
+var estacion = estacionObject.getAsString();
+
+if (ultimoNodoLeido == null) {
+ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
+} else {
+
+var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
+nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
+
+Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+
+ultimoNodoLeido = nuevoNodo;
+}
+}
+}
+}
+} catch (IOException ex) {
+Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+}
+}
+
+var aux = Grafo.ObtenerInstancia().nodos.getHead();
+
+while (aux != null) {
+System.out.print("Estacion: ");
+System.out.print(aux.getValor().getNombreEstacion());
+
+var aux2 = aux.getValor().getVecinos().getHead();
+
+System.out.print(". vecinos: ");
+
+while (aux2 != null) {
+System.out.print(aux2.getValor().getNombreEstacion());
+System.out.print(", ");
+aux2 = aux2.getNext();
+}
+
+System.out.println();
+
+aux = aux.getNext();
+}
+}
+
+private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {
+
+String s = (String) JOptionPane.showInputDialog(
+this,
+"Complete the sentence:\n"
++ "\"Green eggs and...\"", //Texto del men insertar numero
+"Customized Dialog",
+JOptionPane.PLAIN_MESSAGE,
+null,
+null,
+"ham");
+
+try {
+
+int number = Integer.parseInt(s);
+if (number <= 0) {
+JOptionPane.showMessageDialog(this, "El numero tiene que ser mayor que cero");
+return;
+}
+Grafo.ObtenerInstancia().T = number;
+
+} catch (NumberFormatException e) {
+JOptionPane.showMessageDialog(this, "Ingrese un numero valido");
+
+}
     }//GEN-LAST:event_BtnTActionPerformed
 
     /**
