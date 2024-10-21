@@ -9,10 +9,14 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import java.awt.Image;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import java.nio.file.Files;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -22,9 +26,17 @@ public class Interfaz extends javax.swing.JFrame {
     
     int xMouse, yMouse;
     
+    private ImageIcon imagen;
+    private Icon icono;
+    
+    
     public Interfaz() {
         initComponents();
         tab1.setBackground(Color.black);
+        this.setLocationRelativeTo(this);
+        
+        this.pintarImagen(this.Icono, "src/Img/Imagen.png");
+        
     }
 
     /**
@@ -51,6 +63,7 @@ public class Interfaz extends javax.swing.JFrame {
         Pagina1 = new javax.swing.JPanel();
         exitBtn1 = new javax.swing.JPanel();
         exitTxt1 = new javax.swing.JLabel();
+        Icono = new javax.swing.JLabel();
         Pagina2 = new javax.swing.JPanel();
         exitBtn2 = new javax.swing.JPanel();
         exitTxt2 = new javax.swing.JLabel();
@@ -266,20 +279,30 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(exitTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        Icono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
         Pagina1.setLayout(Pagina1Layout);
         Pagina1Layout.setHorizontalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
-                .addGap(0, 648, Short.MAX_VALUE)
-                .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Pagina1Layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exitBtn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
+                        .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))))
         );
         Pagina1Layout.setVerticalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina1Layout.createSequentialGroup()
                 .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 446, Short.MAX_VALUE))
+                .addGap(3, 3, 3)
+                .addComponent(Icono, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 223, Short.MAX_VALUE))
         );
+
+        Icono.getAccessibleContext().setAccessibleName("Icono");
 
         Inicio.add(Pagina1);
 
@@ -654,8 +677,22 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void pintarImagen(JLabel lb1, String ruta){
+        this.imagen = new ImageIcon(ruta);
+        this.icono = new ImageIcon(
+                this.imagen.getImage().getScaledInstance(
+                        lb1.getWidth(), 
+                        lb1.getHeight(), 
+                        Image.SCALE_DEFAULT
+                )
+        );
+        lb1.setIcon(this.icono);
+        this.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Icono;
     private javax.swing.JPanel Inicio;
     private javax.swing.JPanel Pagina1;
     private javax.swing.JPanel Pagina2;
