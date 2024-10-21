@@ -14,6 +14,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Grafo.ObtenerInstancia().nodos = new Lista<NodoGrafo>();
+        Grafo.ObtenerInstancia().esNulo = true;
+        Grafo.ObtenerInstancia().nombreSistemaDeTransporte = "";
      
     }
 }
