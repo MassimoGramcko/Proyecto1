@@ -21,10 +21,9 @@ public class Proyecto1 {
 
 class Nodo <T>{
     Nodo<T> siguiente = null;
-    T valor;
-    
+    T valor;    
     public Nodo (T v) {
-        valor = v 
+        valor = v ;
     }
     
 }
@@ -42,7 +41,7 @@ class Lista <T> {
                 
                     
         }
-        this.cola.siguiente= new Nodo <T>(v);
+        this.cola.siguiente= new Nodo<T>(v);
         this.cola= this.cola.siguiente;
     }
     
@@ -71,7 +70,7 @@ class NodoGrafo {
              instancia= new Grafo();
              
          }
-         return instancia 
+         return instancia; 
      }
      Lista<NodoGrafo> nodos; 
      int T;
