@@ -14,8 +14,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import java.nio.file.Files;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -30,14 +28,6 @@ public class Interfaz extends javax.swing.JFrame {
     
     private ImageIcon imagen;
     private Icon icono;
-    
-    private String texto = "Nos complace que te unas a nuestra reconocida cadena de supermercados mientras nos aventuramos a entrar en Sudamérica."
-                           + "Para asegurar el éxito de esta expansión,"
-                           + "hemos desarrollado un programa innovador diseñado para ayudarte a determinar las mejores ubicaciones para nuestras nuevas sucursales.";
-    
-    public String StrToHtml(String texto){
-        return "<html><p>" + texto + "</p></html>";
-    }
     
     public Interfaz() {
         initComponents();
@@ -76,8 +66,6 @@ public class Interfaz extends javax.swing.JFrame {
         Icono1 = new javax.swing.JLabel();
         Icono2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        BtnMensaje = new javax.swing.JButton();
-        Texto1 = new javax.swing.JLabel();
         Pagina2 = new javax.swing.JPanel();
         exitBtn2 = new javax.swing.JPanel();
         exitTxt2 = new javax.swing.JLabel();
@@ -313,20 +301,6 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("¡Bienvenido!");
 
-        BtnMensaje.setBackground(new java.awt.Color(153, 153, 153));
-        BtnMensaje.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        BtnMensaje.setText("Mensaje");
-        BtnMensaje.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        BtnMensaje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnMensajeActionPerformed(evt);
-            }
-        });
-
-        Texto1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        Texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Texto1.setBorder(new javax.swing.border.MatteBorder(null));
-
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
         Pagina1.setLayout(Pagina1Layout);
         Pagina1Layout.setHorizontalGroup(
@@ -336,42 +310,27 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Icono1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                     .addComponent(Icono2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pagina1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Pagina1Layout.createSequentialGroup()
-                        .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Pagina1Layout.createSequentialGroup()
-                                .addGap(183, 183, 183)
-                                .addComponent(BtnMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(Pagina1Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Pagina1Layout.setVerticalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina1Layout.createSequentialGroup()
                 .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(Pagina1Layout.createSequentialGroup()
-                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pagina1Layout.createSequentialGroup()
-                        .addContainerGap(34, Short.MAX_VALUE)
-                        .addComponent(Icono1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
+                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Pagina1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Texto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)))
-                .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Icono2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(Pagina1Layout.createSequentialGroup()
+                        .addContainerGap(34, Short.MAX_VALUE)
+                        .addComponent(Icono1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(Icono2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33))
         );
 
@@ -716,10 +675,6 @@ public class Interfaz extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_Pagina4MouseDragged
 
-    private void BtnMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMensajeActionPerformed
-        Texto1.setText(StrToHtml(texto));
-    }//GEN-LAST:event_BtnMensajeActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -772,7 +727,6 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnMensaje;
     private javax.swing.JLabel Icono1;
     private javax.swing.JLabel Icono2;
     private javax.swing.JPanel Inicio;
@@ -781,7 +735,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel Pagina2;
     private javax.swing.JPanel Pagina3;
     private javax.swing.JPanel Pagina4;
-    private javax.swing.JLabel Texto1;
     private javax.swing.JLabel Titulo;
     private javax.swing.JPanel exitBtn1;
     private javax.swing.JPanel exitBtn2;
