@@ -14,28 +14,33 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import java.nio.file.Files;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.implementations.SingleGraph;
 
 /**
  *
  * @author massi
  */
 public class Interfaz extends javax.swing.JFrame {
-    
+
     int xMouse, yMouse;
-    
+
     private ImageIcon imagen;
     private Icon icono;
-    
+
     public Interfaz() {
         initComponents();
         tab1.setBackground(Color.black);
         this.setLocationRelativeTo(this);
-        
+
         this.pintarImagen(this.Icono1, "src/Img/Caracas.png");
-         this.pintarImagen(this.Icono2, "src/Img/Bogota.png");
+        this.pintarImagen(this.Icono2, "src/Img/Bogota.png");
     }
 
     /**
@@ -69,6 +74,9 @@ public class Interfaz extends javax.swing.JFrame {
         Pagina2 = new javax.swing.JPanel();
         exitBtn2 = new javax.swing.JPanel();
         exitTxt2 = new javax.swing.JLabel();
+        BtnRed = new javax.swing.JButton();
+        BtnMost = new javax.swing.JButton();
+        BtnT = new javax.swing.JButton();
         Pagina3 = new javax.swing.JPanel();
         exitBtn3 = new javax.swing.JPanel();
         exitTxt3 = new javax.swing.JLabel();
@@ -379,6 +387,27 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(exitTxt2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
+        BtnRed.setText("Cargar Red");
+        BtnRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRedActionPerformed(evt);
+            }
+        });
+
+        BtnMost.setText("Mostrar Grafo");
+        BtnMost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostActionPerformed(evt);
+            }
+        });
+
+        BtnT.setText("Establecer T");
+        BtnT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
         Pagina2Layout.setHorizontalGroup(
@@ -386,12 +415,25 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina2Layout.createSequentialGroup()
                 .addGap(0, 728, Short.MAX_VALUE)
                 .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(Pagina2Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(BtnRed)
+                .addGap(70, 70, 70)
+                .addComponent(BtnMost)
+                .addGap(61, 61, 61)
+                .addComponent(BtnT)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pagina2Layout.setVerticalGroup(
             Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina2Layout.createSequentialGroup()
                 .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 446, Short.MAX_VALUE))
+                .addGap(187, 187, 187)
+                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnRed)
+                    .addComponent(BtnMost)
+                    .addComponent(BtnT))
+                .addGap(0, 234, Short.MAX_VALUE))
         );
 
         Inicio.add(Pagina2);
@@ -531,47 +573,47 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
-   Pagina1.setVisible(true);
-   Pagina2.setVisible(false);
-   Pagina3.setVisible(false);
-   Pagina4.setVisible(false);
-   tab1.setBackground(Color.black);
-   tab2.setBackground(new Color (102,102,102));
-   tab3.setBackground(new Color (102,102,102));
-   tab4.setBackground(new Color (102,102,102));
+        Pagina1.setVisible(true);
+        Pagina2.setVisible(false);
+        Pagina3.setVisible(false);
+        Pagina4.setVisible(false);
+        tab1.setBackground(Color.black);
+        tab2.setBackground(new Color(102, 102, 102));
+        tab3.setBackground(new Color(102, 102, 102));
+        tab4.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab1MouseClicked
 
     private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-   Pagina2.setVisible(true);
-   Pagina1.setVisible(false);
-   Pagina3.setVisible(false);
-   Pagina4.setVisible(false);
-   tab2.setBackground(Color.black);
-   tab1.setBackground(new Color (102,102,102));
-   tab3.setBackground(new Color (102,102,102));
-   tab4.setBackground(new Color (102,102,102));
+        Pagina2.setVisible(true);
+        Pagina1.setVisible(false);
+        Pagina3.setVisible(false);
+        Pagina4.setVisible(false);
+        tab2.setBackground(Color.black);
+        tab1.setBackground(new Color(102, 102, 102));
+        tab3.setBackground(new Color(102, 102, 102));
+        tab4.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab2MouseClicked
 
     private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-   Pagina3.setVisible(true);
-   Pagina2.setVisible(false);
-   Pagina1.setVisible(false);
-   Pagina4.setVisible(false);
-   tab3.setBackground(Color.black);
-   tab2.setBackground(new Color (102,102,102));
-   tab1.setBackground(new Color (102,102,102));
-   tab4.setBackground(new Color (102,102,102));
+        Pagina3.setVisible(true);
+        Pagina2.setVisible(false);
+        Pagina1.setVisible(false);
+        Pagina4.setVisible(false);
+        tab3.setBackground(Color.black);
+        tab2.setBackground(new Color(102, 102, 102));
+        tab1.setBackground(new Color(102, 102, 102));
+        tab4.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab3MouseClicked
 
     private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
-   Pagina4.setVisible(true);
-   Pagina3.setVisible(false);
-   Pagina2.setVisible(false);
-   Pagina1.setVisible(false);
-   tab4.setBackground(Color.black);
-   tab2.setBackground(new Color (102,102,102));
-   tab3.setBackground(new Color (102,102,102));
-   tab1.setBackground(new Color (102,102,102));
+        Pagina4.setVisible(true);
+        Pagina3.setVisible(false);
+        Pagina2.setVisible(false);
+        Pagina1.setVisible(false);
+        tab4.setBackground(Color.black);
+        tab2.setBackground(new Color(102, 102, 102));
+        tab3.setBackground(new Color(102, 102, 102));
+        tab1.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_tab4MouseClicked
 
     private void Pagina1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pagina1MousePressed
@@ -580,14 +622,14 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_Pagina1MousePressed
 
     private void Pagina1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pagina1MouseDragged
-        
+
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse); // Direccion del eje X y eje Y del mouse 
     }//GEN-LAST:event_Pagina1MouseDragged
 
     private void exitTxt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseClicked
-       System.exit(0); // Salida del programa
+        System.exit(0); // Salida del programa
     }//GEN-LAST:event_exitTxt1MouseClicked
 
     private void exitTxt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseEntered
@@ -596,7 +638,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt1MouseEntered
 
     private void exitTxt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt1MouseExited
-        exitBtn1.setBackground(new Color (255,153,51));// Devuelve el color del background
+        exitBtn1.setBackground(new Color(255, 153, 51));// Devuelve el color del background
         exitTxt1.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt1MouseExited
 
@@ -621,12 +663,12 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt2MouseEntered
 
     private void exitTxt2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt2MouseExited
-        exitBtn2.setBackground(new Color (255,153,51));
+        exitBtn2.setBackground(new Color(255, 153, 51));
         exitTxt2.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt2MouseExited
 
     private void exitTxt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt3MouseClicked
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_exitTxt3MouseClicked
 
     private void exitTxt3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt3MouseEntered
@@ -635,7 +677,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt3MouseEntered
 
     private void exitTxt3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt3MouseExited
-        exitBtn3.setBackground(new Color (255,153,51));
+        exitBtn3.setBackground(new Color(255, 153, 51));
         exitTxt3.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt3MouseExited
 
@@ -660,7 +702,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxt4MouseEntered
 
     private void exitTxt4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxt4MouseExited
-       exitBtn4.setBackground(new Color (255,153,51));
+        exitBtn4.setBackground(new Color(255, 153, 51));
         exitTxt4.setForeground(Color.black);
     }//GEN-LAST:event_exitTxt4MouseExited
 
@@ -675,14 +717,151 @@ public class Interfaz extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_Pagina4MouseDragged
 
+    private void BtnRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRedActionPerformed
+        var chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+
+        var file = chooser.getSelectedFile();
+
+        if (file != null) {
+            try {
+                var nombre = file.getName();
+                if (nombre == "caracas") {
+                    Grafo.ObtenerInstancia().T = 3;
+                } else if (nombre == "bogota") {
+                    Grafo.ObtenerInstancia().T = 10;
+                }
+
+                var contenido = new String(Files.readAllBytes(file.toPath()));
+
+                JsonParser parser = new JsonParser();
+                var element = parser.parse(contenido);
+                var sistemaDeTransporteObjecto = element.getAsJsonObject().entrySet();
+                var sistemaDeTransporte = sistemaDeTransporteObjecto.iterator().next();
+                Grafo.ObtenerInstancia().nombreSistemaDeTransporte = sistemaDeTransporte.getKey();
+
+                var lineas = sistemaDeTransporte.getValue().getAsJsonArray();
+                for (JsonElement lineaElement : lineas) {
+                    var lineaObjeto = lineaElement.getAsJsonObject().entrySet();
+                    var linea = lineaObjeto.iterator().next();
+                    String nombreDeLinea = linea.getKey();
+
+                    var estacionesArray = linea.getValue().getAsJsonArray();
+
+                    NodoGrafo ultimoNodoLeido = null;
+                    for (JsonElement estacionObject : estacionesArray) {
+                        if (estacionObject.isJsonPrimitive()) {
+                            var estacion = estacionObject.getAsString();
+
+                            if (ultimoNodoLeido == null) {
+                                ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
+                            } else {
+                                
+                                var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
+                                nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
+
+                                Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+
+                                ultimoNodoLeido = nuevoNodo;
+                            }
+                        }
+                    }
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        var aux = Grafo.ObtenerInstancia().nodos.getHead();
+
+        while (aux != null) {
+            System.out.print("Estacion: ");
+            System.out.print(aux.getValor().getNombreEstacion());
+
+            var aux2 = aux.getValor().getVecinos().getHead();
+
+            System.out.print(". vecinos: ");
+
+            while (aux2 != null) {
+                System.out.print(aux2.getValor().getNombreEstacion());
+                System.out.print(", ");
+                aux2 = aux2.getNext();
+            }
+
+            System.out.println();
+
+            aux = aux.getNext();
+        }
+    }//GEN-LAST:event_BtnRedActionPerformed
+
+    private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTActionPerformed
+
+        String s = (String) JOptionPane.showInputDialog(
+                this,
+                "Complete the sentence:\n"
+                + "\"Green eggs and...\"", //Texto del men insertar numero
+                "Customized Dialog",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                null,
+                "ham");
+
+        try {
+
+            int number = Integer.parseInt(s);
+            if (number <= 0) {
+                JOptionPane.showMessageDialog(this, "El numero tiene que ser mayor que cero");
+                return;
+            }
+            Grafo.ObtenerInstancia().T = number;
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese un numero valido");
+
+        }
+
+
+    }//GEN-LAST:event_BtnTActionPerformed
+
+    private void BtnMostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostActionPerformed
+        System.setProperty("org.graphstream.ui", "swing");
+
+        Graph graph = new SingleGraph("Tutorial 1");
+        Grafo.ObtenerInstancia();
+
+        var aux = Grafo.ObtenerInstancia().nodos.getHead();
+
+        while (aux != null) {
+            String Estacion;
+            Estacion = aux.getValor().getNombreEstacion();
+            graph.addNode(Estacion);
+            
+            var aux2 = aux.getValor().getVecinos().getHead();
+
+//            while (aux2 != null) {
+//                String Vecino;
+//                Vecino = aux2.getValor().getNombreEstacion();
+//                graph.addEdge(Estacion + Vecino, Estacion, Vecino);               
+//                aux2 = aux2.getNext();
+//            }
+
+            aux = aux.getNext();
+
+        }       
+
+        graph.display();
+    }//GEN-LAST:event_BtnMostActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])throws IOException {
+    public static void main(String args[]) throws IOException {
         Grafo.ObtenerInstancia().nodos = new Lista<NodoGrafo>();
         Grafo.ObtenerInstancia().esNulo = true;
         Grafo.ObtenerInstancia().nombreSistemaDeTransporte = "";
-        
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -712,13 +891,13 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void pintarImagen(JLabel lb1, String ruta){
+
+    private void pintarImagen(JLabel lb1, String ruta) {
         this.imagen = new ImageIcon(ruta);
         this.icono = new ImageIcon(
                 this.imagen.getImage().getScaledInstance(
-                        lb1.getWidth(), 
-                        lb1.getHeight(), 
+                        lb1.getWidth(),
+                        lb1.getHeight(),
                         Image.SCALE_DEFAULT
                 )
         );
@@ -727,6 +906,9 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMost;
+    private javax.swing.JButton BtnRed;
+    private javax.swing.JButton BtnT;
     private javax.swing.JLabel Icono1;
     private javax.swing.JLabel Icono2;
     private javax.swing.JPanel Inicio;
