@@ -800,13 +800,13 @@ public class Interfaz extends javax.swing.JFrame {
 
         String s = (String) JOptionPane.showInputDialog(
                 this,
-                "Complete the sentence:\n"
-                + "\"Green eggs and...\"", //Texto del men insertar numero
-                "Customized Dialog",
+                "\n Introduzca el valor de t \n"
+                + "", 
+                "",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
                 null,
-                "ham");
+                "");
 
         try {
 
@@ -826,32 +826,50 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTActionPerformed
 
     private void BtnMostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostActionPerformed
-        System.setProperty("org.graphstream.ui", "swing");
+        
+// Configurar el sistema para usar GraphStream con Swing
+    System.setProperty("org.graphstream.ui", "swing");        
 
-        Graph graph = new SingleGraph("Tutorial 1");
-        Grafo.ObtenerInstancia();
+    // Crear un nuevo grafo
+    Graph graph = new SingleGraph("Grafo");        
 
-        var aux = Grafo.ObtenerInstancia().nodos.getHead();
+    // Obtener la instancia del grafo
+    Grafo grafo = Grafo.ObtenerInstancia();        
+    var aux = grafo.nodos.getHead();        
 
-        while (aux != null) {
-            String Estacion;
-            Estacion = aux.getValor().getNombreEstacion();
-            graph.addNode(Estacion);
-            
-            var aux2 = aux.getValor().getVecinos().getHead();
+    // Recorrer los nodos del grafo
+    while (aux != null) {
+        String estacion = aux.getValor().getNombreEstacion();
 
-//            while (aux2 != null) {
-//                String Vecino;
-//                Vecino = aux2.getValor().getNombreEstacion();
-//                graph.addEdge(Estacion + Vecino, Estacion, Vecino);               
-//                aux2 = aux2.getNext();
-//            }
+        // Verificar si el nodo ya existe
+        if (graph.getNode(estacion) == null) {
+            graph.addNode(estacion);
+        }
 
-            aux = aux.getNext();
+        var aux2 = aux.getValor().getVecinos().getHead();
+        // Recorrer los vecinos de cada nodo
+        while (aux2 != null) {
+            String vecino = aux2.getValor().getNombreEstacion();
 
-        }       
+            // Verificar si el nodo vecino ya existe
+            if (graph.getNode(vecino) == null) {
+                graph.addNode(vecino);
+            }
 
-        graph.display();
+            // Verificar si la arista ya existe
+            if (graph.getEdge(estacion + "-" + vecino) == null && graph.getEdge(vecino + "-" + estacion) == null) {
+                graph.addEdge(estacion + "-" + vecino, estacion, vecino);
+            }
+
+            aux2 = aux2.getNext();
+        }
+
+        aux = aux.getNext();
+    }
+
+    // Mostrar el grafo
+    graph.display();
+
     }//GEN-LAST:event_BtnMostActionPerformed
 
     /**
