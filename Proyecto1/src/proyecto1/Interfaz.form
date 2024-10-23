@@ -507,7 +507,12 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="Barrapg_4" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="540" max="32767" attributes="0"/>
+                              <EmptySpace pref="344" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="BtnVer" max="32767" attributes="0"/>
+                                  <Component id="BtnSelec" pref="128" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -542,17 +547,29 @@
                                   <Component id="exitBtn2" min="-2" max="-2" attributes="0"/>
                                   <Component id="Barrapg_4" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                              <Component id="BtnRed" min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="BtnRed" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="BtnSelec" min="-2" pref="48" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Component id="ImgArch" min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BtnMost" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                          <Component id="ImgProy" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="BtnMost" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Component id="ImgProy" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="72" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="BtnVer" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="BtnT" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="ImgVal" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
@@ -734,6 +751,16 @@
             <Component class="javax.swing.JLabel" name="ImgVal">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="BtnSelec">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BtnSelec"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="BtnVer">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BtnVer"/>
               </Properties>
             </Component>
           </SubComponents>
