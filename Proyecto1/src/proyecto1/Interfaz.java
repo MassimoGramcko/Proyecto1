@@ -14,6 +14,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import java.nio.file.Files;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
@@ -22,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.ui.view.Viewer;
 
 /**
  *
@@ -953,25 +956,46 @@ public class Interfaz extends javax.swing.JFrame {
                     var estacionesArray = linea.getValue().getAsJsonArray();
 
                     NodoGrafo ultimoNodoLeido = null;
-                    for (JsonElement estacionObject : estacionesArray) {
-                        if (estacionObject.isJsonPrimitive()) {
-                            var estacion = estacionObject.getAsString();
+                for (JsonElement estacionObject : estacionesArray) {
+                    if (estacionObject.isJsonPrimitive()) {
+                        // Manejar estación simple
+                        var estacion = estacionObject.getAsString();
+                        if (ultimoNodoLeido == null) {
+                            ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                            Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
+                        } else {
+                            var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                            ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
+                            nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
+                            Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+                            ultimoNodoLeido = nuevoNodo;
+                        }
+                    } else if (estacionObject.isJsonObject()) {
+                        // Manejar objeto con clave-valor
+                        var objetoEstacion = estacionObject.getAsJsonObject();
+                        // Obtener las claves del objeto
+                        for (String clave : objetoEstacion.keySet()) {
+                            String vecino = objetoEstacion.get(clave).getAsString();
 
-                            if (ultimoNodoLeido == null) {
-                                ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
-                                Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
-                            } else {
-                                
-                                var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                            // Crear nodo para la estación
+                            var nuevoNodo = new NodoGrafo(new Lista(), clave, nombreDeLinea);
+                            Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+
+                            // Conectar nodos
+                            if (ultimoNodoLeido != null) {
                                 ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
                                 nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
-
-                                Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
-
-                                ultimoNodoLeido = nuevoNodo;
                             }
+                            ultimoNodoLeido = nuevoNodo;
+
+                            // Manejar el vecino
+                            var vecinoNodo = new NodoGrafo(new Lista(), vecino, nombreDeLinea);
+                            Grafo.ObtenerInstancia().nodos.Agregar(vecinoNodo);
+                            nuevoNodo.getVecinos().Agregar(vecinoNodo);
+                            vecinoNodo.getVecinos().Agregar(nuevoNodo);
                         }
                     }
+                }
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
@@ -1049,6 +1073,11 @@ public class Interfaz extends javax.swing.JFrame {
         if (graph.getNode(estacion) == null) {
             graph.addNode(estacion);
         }
+        
+    // Establecer el nombre del nodo como atributo
+    graph.getNode(estacion).setAttribute("ui.label", estacion);
+    // Establecer la posición de la etiqueta debajo del nodo
+    graph.getNode(estacion).setAttribute("ui.label.position", "bottom");
 
         var aux2 = aux.getValor().getVecinos().getHead();
         // Recorrer los vecinos de cada nodo
@@ -1071,8 +1100,11 @@ public class Interfaz extends javax.swing.JFrame {
         aux = aux.getNext();
     }
 
-    // Mostrar el grafo
-    graph.display();
+    
+    Viewer viewer = graph.display();
+    viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        
+    
 
     }//GEN-LAST:event_BtnMostActionPerformed
 
