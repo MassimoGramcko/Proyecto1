@@ -13,11 +13,13 @@ public class NodoGrafo {
             private Lista<NodoGrafo> vecinos;
             private String nombreEstacion;
             private String nombreDeLinea;
+            private Boolean sucursal;
 
             public NodoGrafo(Lista<NodoGrafo> vecinos, String nombreEstacion, String nombreDeLinea) {
                 this.vecinos = vecinos;
                 this.nombreEstacion = nombreEstacion;
                 this.nombreDeLinea = nombreDeLinea;
+                this.sucursal = false;
             }
 
             public Lista<NodoGrafo> getVecinos() {
@@ -42,6 +44,14 @@ public class NodoGrafo {
 
             public void setNombreDeLinea(String nombreDeLinea) {
                 this.nombreDeLinea = nombreDeLinea;
+            }
+
+            public Boolean getSucursal() {
+                return sucursal;
+            }
+
+            public void setSucursal(Boolean sucursal) {
+                this.sucursal = sucursal;
             }
 }
 

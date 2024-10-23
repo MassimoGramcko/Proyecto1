@@ -992,7 +992,7 @@ public class Interfaz extends javax.swing.JFrame {
                             var vecinoNodo = new NodoGrafo(new Lista(), vecino, nombreDeLinea);
                             Grafo.ObtenerInstancia().nodos.Agregar(vecinoNodo);
                             nuevoNodo.getVecinos().Agregar(vecinoNodo);
-                            vecinoNodo.getVecinos().Agregar(nuevoNodo);
+                            vecinoNodo.getVecinos().Agregar(nuevoNodo); 
                         }
                     }
                 }
