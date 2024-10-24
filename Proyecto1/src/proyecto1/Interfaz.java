@@ -102,6 +102,8 @@ public class Interfaz extends javax.swing.JFrame {
         exitTxt4 = new javax.swing.JLabel();
         Barrapg_7 = new javax.swing.JPanel();
         Barrapg_8 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TextAbout = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -242,7 +244,7 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -767,6 +769,10 @@ public class Interfaz extends javax.swing.JFrame {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
+        TextAbout.setColumns(20);
+        TextAbout.setRows(5);
+        jScrollPane1.setViewportView(TextAbout);
+
         javax.swing.GroupLayout Pagina4Layout = new javax.swing.GroupLayout(Pagina4);
         Pagina4.setLayout(Pagina4Layout);
         Pagina4Layout.setHorizontalGroup(
@@ -776,6 +782,10 @@ public class Interfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(Barrapg_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Pagina4Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pagina4Layout.setVerticalGroup(
             Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -783,7 +793,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Barrapg_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
+                .addGap(87, 87, 87)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(Barrapg_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1329,6 +1341,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel Pagina2;
     private javax.swing.JPanel Pagina3;
     private javax.swing.JPanel Pagina4;
+    private javax.swing.JTextArea TextAbout;
     private javax.swing.JLabel TextBienv;
     private javax.swing.JLabel Titulo;
     private javax.swing.JPanel exitBtn1;
@@ -1344,6 +1357,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel tab1;
     private javax.swing.JPanel tab2;
