@@ -769,7 +769,10 @@ public class Interfaz extends javax.swing.JFrame {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
+        TextAbout.setBackground(new java.awt.Color(102, 102, 102));
         TextAbout.setColumns(20);
+        TextAbout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TextAbout.setForeground(new java.awt.Color(255, 255, 255));
         TextAbout.setRows(5);
         TextAbout.setText("Modelo Geográfico\nCada parada de transporte se considera el centro de una zona comercial, dentro de un radio de hasta t paradas. Una sucursal cubre una zona si está a no más de t paradas de una parada con sucursal.\n\nFuncionalidades del Programa\nCargar Red de Transporte: Permite cargar y reemplazar redes de transporte desde archivos.\n\nMostrar Grafo: Visualiza la red de transporte usando GraphStream.\n\nEstablecer Valor de t: Posibilidad de cambiar el valor de t en cualquier momento para evaluar diferentes escenarios.\n\nColocar Sucursal: Seleccionar paradas para ubicar sucursales y ver la cobertura comercial.\n\nVer Cobertura de Sucursal: Usar DFS o BFS para mostrar paradas alcanzables desde una sucursal.\n\nRevisar Cobertura Total: Evaluar si las sucursales cubren toda la ciudad y sugerir nuevas ubicaciones si es necesario.\n\nAgregar Línea: Añadir nuevas líneas a la red para evaluar la cobertura futura.\n");
         jScrollPane1.setViewportView(TextAbout);
@@ -778,15 +781,13 @@ public class Interfaz extends javax.swing.JFrame {
         Pagina4.setLayout(Pagina4Layout);
         Pagina4Layout.setHorizontalGroup(
             Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pagina4Layout.createSequentialGroup()
-                .addComponent(Barrapg_8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Barrapg_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina4Layout.createSequentialGroup()
+                .addGroup(Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Barrapg_8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(Barrapg_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(Pagina4Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Pagina4Layout.setVerticalGroup(
             Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -794,9 +795,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Barrapg_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
                 .addComponent(Barrapg_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

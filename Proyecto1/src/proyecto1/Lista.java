@@ -39,6 +39,10 @@ public class Lista<T> {
         return size;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public void Agregar(T v) {
         this.size++;
         if (this.head == null) {

@@ -59,4 +59,10 @@ public class NodoGrafo {
     public void setSucursal(Boolean sucursal) {
         this.sucursal = sucursal;
     }
+
+    public void setIndice(int indice) {
+        this.indice = indice;
+    }
+    
+    
 }

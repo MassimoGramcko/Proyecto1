@@ -908,16 +908,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="Barrapg_8" max="32767" attributes="0"/>
+                  <Component id="Barrapg_7" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Barrapg_8" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="exitBtn4" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="Barrapg_7" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="572" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -928,9 +926,9 @@
                           <Component id="exitBtn4" min="-2" max="-2" attributes="0"/>
                           <Component id="Barrapg_8" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="230" max="-2" attributes="0"/>
-                      <EmptySpace pref="92" max="32767" attributes="0"/>
+                      <EmptySpace pref="61" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="293" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="Barrapg_7" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1031,7 +1029,16 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="TextAbout">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="66" type="rgb"/>
+                    </Property>
                     <Property name="columns" type="int" value="20"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value="Modelo Geogr&#xe1;fico&#xa;Cada parada de transporte se considera el centro de una zona comercial, dentro de un radio de hasta t paradas. Una sucursal cubre una zona si est&#xe1; a no m&#xe1;s de t paradas de una parada con sucursal.&#xa;&#xa;Funcionalidades del Programa&#xa;Cargar Red de Transporte: Permite cargar y reemplazar redes de transporte desde archivos.&#xa;&#xa;Mostrar Grafo: Visualiza la red de transporte usando GraphStream.&#xa;&#xa;Establecer Valor de t: Posibilidad de cambiar el valor de t en cualquier momento para evaluar diferentes escenarios.&#xa;&#xa;Colocar Sucursal: Seleccionar paradas para ubicar sucursales y ver la cobertura comercial.&#xa;&#xa;Ver Cobertura de Sucursal: Usar DFS o BFS para mostrar paradas alcanzables desde una sucursal.&#xa;&#xa;Revisar Cobertura Total: Evaluar si las sucursales cubren toda la ciudad y sugerir nuevas ubicaciones si es necesario.&#xa;&#xa;Agregar L&#xed;nea: A&#xf1;adir nuevas l&#xed;neas a la red para evaluar la cobertura futura.&#xa;"/>
                   </Properties>
