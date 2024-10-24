@@ -8,45 +8,48 @@ package proyecto1;
  *
  * @author massi
  */
-
-
 public class Lista<T> {
-    
-            private Nodo<T> head = null;
-            private Nodo<T> tail = null;
 
-            public Lista() {
-                this.head = null;
-                this.tail = null;
-            }
+    private Nodo<T> head = null;
+    private Nodo<T> tail = null;
+    private int size = 0;
 
-            public Nodo<T> getHead() {
-                return head;
-            }
+    public Lista() {
+        this.head = null;
+        this.tail = null;
+    }
 
-            public void setHead(Nodo<T> Head) {
-                this.head = Head;
-            }
+    public Nodo<T> getHead() {
+        return head;
+    }
 
-            public Nodo<T> getTail() {
-                return tail;
-            }
+    public void setHead(Nodo<T> Head) {
+        this.head = Head;
+    }
 
-            public void setTail(Nodo<T> Tail) {
-                this.tail = Tail;
-            }
+    public Nodo<T> getTail() {
+        return tail;
+    }
 
+    public void setTail(Nodo<T> Tail) {
+        this.tail = Tail;
+    }
 
-            public void Agregar(T v) {
-                if (this.head == null) {
-                    this.head = new Nodo<T>(v);
-                    this.head.setNext(this.tail);
-                    this.tail = this.head;
-                    return;
-                }
+    public int getSize() {
+        return size;
+    }
 
-                this.tail.setNext(new Nodo<T>(v));
-                this.tail = this.tail.getNext();
-            }
+    public void Agregar(T v) {
+        this.size++;
+        if (this.head == null) {
+            this.head = new Nodo<T>(v);
+            this.head.setNext(this.tail);
+            this.tail = this.head;
+            return;
+        }
+
+        this.tail.setNext(new Nodo<T>(v));
+        this.tail = this.tail.getNext();
+    }
 
 }

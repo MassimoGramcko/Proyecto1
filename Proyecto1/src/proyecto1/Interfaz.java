@@ -989,10 +989,10 @@ public class Interfaz extends javax.swing.JFrame {
                             // Manejar estación simple
                             var estacion = estacionObject.getAsString();
                             if (ultimoNodoLeido == null) {
-                                ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea, Grafo.ObtenerInstancia().nodos.getSize());
                                 Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
                             } else {
-                                var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea, Grafo.ObtenerInstancia().nodos.getSize());
                                 ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
                                 nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
                                 Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
@@ -1006,7 +1006,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 String vecino = objetoEstacion.get(clave).getAsString();
 
                                 // Crear nodo para la estación
-                                var nuevoNodo = new NodoGrafo(new Lista(), clave, nombreDeLinea);
+                                var nuevoNodo = new NodoGrafo(new Lista(), clave, nombreDeLinea, Grafo.ObtenerInstancia().nodos.getSize());
                                 Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
 
                                 // Conectar nodos
@@ -1017,7 +1017,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 ultimoNodoLeido = nuevoNodo;
 
                                 // Manejar el vecino
-                                var vecinoNodo = new NodoGrafo(new Lista(), vecino, nombreDeLinea);
+                                var vecinoNodo = new NodoGrafo(new Lista(), vecino, nombreDeLinea, Grafo.ObtenerInstancia().nodos.getSize());
                                 Grafo.ObtenerInstancia().nodos.Agregar(vecinoNodo);
                                 nuevoNodo.getVecinos().Agregar(vecinoNodo);
                                 vecinoNodo.getVecinos().Agregar(nuevoNodo);
@@ -1036,15 +1036,7 @@ public class Interfaz extends javax.swing.JFrame {
             System.out.print("Estacion: ");
             System.out.print(aux.getValor().getNombreEstacion());
 
-            var aux2 = aux.getValor().getVecinos().getHead();
-
-            System.out.print(". vecinos: ");
-
-            while (aux2 != null) {
-                System.out.print(aux2.getValor().getNombreEstacion());
-                System.out.print(", ");
-                aux2 = aux2.getNext();
-            }
+            System.out.print(aux.getValor().getIndice());
 
             System.out.println();
 
@@ -1202,41 +1194,64 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSelecActionPerformed
 
     private void BtnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerActionPerformed
-        
+
         var grafo = Grafo.ObtenerInstancia();
-        if (grafo.getT() == 0){
+        if (grafo.getT() == 0) {
             JOptionPane.showMessageDialog(this, "No se puede cubrir ninguna sucursal si T = 0");
             return;
         }
-            
+        var sucursales = new Lista<NodoGrafo>();
+        var aux = grafo.nodos.getHead();
+        while (aux != null) {
+            if (aux.getValor().getSucursal()) {
+                sucursales.Agregar(aux.getValor());
+            }
+            aux = aux.getNext();
+        }
+        if (sucursales.getSize() == 0) {
+            JOptionPane.showMessageDialog(this, "No hay sucursales");
+            return;
+        }
+
         Object[] options = {"Profundidad", "Anchura", "Cancelar"};
-        
-        
+
         int choice = JOptionPane.showOptionDialog(
-                this, 
-                "Do you want to proceed?", 
+                this,
+                "Do you want to proceed?",
                 "Custom Options",
-                JOptionPane.YES_NO_CANCEL_OPTION, 
-                JOptionPane.QUESTION_MESSAGE, 
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
                 null,
                 options,
-                options[2] 
+                options[2]
         );
-
 
         if (choice == JOptionPane.YES_OPTION) {
 
             JOptionPane.showMessageDialog(this, "Buscando por profundidad...");
-            
-            
+            boolean visited[] = new boolean[grafo.nodos.getSize()];
+            for (var v : visited) {
+                v = false;
+            }
+            var auxSucursales = sucursales.getHead();
+            while (auxSucursales != null) {
+                busquedaporprofundidad(visited, auxSucursales.getValor());
+
+                auxSucursales = auxSucursales.getNext();
+            }
+
         } else if (choice == JOptionPane.NO_OPTION) {
             JOptionPane.showMessageDialog(this, "Buscando por anchura...");
-            
-            
+
         } else {
             JOptionPane.showMessageDialog(this, "Cancelado.");
         }
+
     }//GEN-LAST:event_BtnVerActionPerformed
+
+    public void busquedaporprofundidad(boolean[] visited, NodoGrafo vertice) {
+
+    }
 
     /**
      * @param args the command line arguments
