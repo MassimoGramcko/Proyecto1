@@ -771,6 +771,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         TextAbout.setColumns(20);
         TextAbout.setRows(5);
+        TextAbout.setText("Una reconocida cadena de supermercados busca entrar en Sudamérica, pero necesita un programa\n que le ayude a determinar la mejor ubicación de sus sucursales. Como política estratégica de\n la empresa, \nuna sucursal se ubicará dentro de un radio de no más de 100 metros de una parada del sistema \nde transporte urbano de la ciudad. Además, la Dirección de Operaciones de la empresa \nha generado un modelo geográfico de uso interno en el que cada parada se considera como el \ncentro geográfico alrededor del cual y en un radio equivalente a máximo t paradas, se define una zona \ncomercial. Cada zona es denominada como la parada elegida como su centro y que está próxima a la \nsucursal. Se considera que una sucursal cubre comercialmente una zona si la parada (centro de la zona) \nestá a no más de t paradas de una parada con sucursal (donde t es un número que puede variar por\n ciudad).\nEl programa debe permitirle al usuario seleccionar paradas para colocar sucursales y luego indicar \nla cobertura comercial, según la configuración creada. De esta forma, el programa ayudará al usuario a\n determinar si se logra cubrir las necesidades de la población que hace vida, al menos alrededor de las\n rutas de transporte urbano. La meta es cubrir enteramente la ciudad.\n");
         jScrollPane1.setViewportView(TextAbout);
 
         javax.swing.GroupLayout Pagina4Layout = new javax.swing.GroupLayout(Pagina4);
