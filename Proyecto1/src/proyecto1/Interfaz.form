@@ -336,26 +336,19 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="exitBtn1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="ImgLogo" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="ImgLogo" min="-2" pref="416" max="-2" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="TextBienv" min="-2" pref="340" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="Icono1" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="Icono2" min="-2" pref="133" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jScrollPane2" alignment="1" min="-2" pref="317" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="Icono1" min="-2" pref="140" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="Icono2" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="TextBienv" alignment="1" min="-2" pref="317" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="1" min="-2" pref="317" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -368,20 +361,20 @@
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="TextBienv" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Icono1" pref="130" max="32767" attributes="0"/>
-                                  <Component id="Icono2" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Icono1" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="Icono2" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ImgLogo" min="-2" pref="424" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="ImgLogo" min="-2" pref="387" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -439,11 +432,6 @@
                   <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
               </Properties>
               <AccessibilityProperties>
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Icono"/>
@@ -452,11 +440,6 @@
             <Component class="javax.swing.JLabel" name="Icono2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="TextBienv">
@@ -524,6 +507,9 @@
                 <Component class="javax.swing.JTextArea" name="Textpag1">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="12" style="1"/>
+                    </Property>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" value=" Bienvenido a nuestro exclusivo programa de planificaci&#xf3;n estrat&#xe9;gica &#xa; para la ubicaci&#xf3;n de sucursales. Estamos emocionados de que te unas &#xa; a este proyecto innovador que tiene como objetivo optimizar la &#xa; presencia de una reconocida cadena de supermercados en Sudam&#xe9;rica. &#xa;&#xa;&#xa;"/>
                   </Properties>
@@ -532,9 +518,8 @@
             </Container>
             <Component class="javax.swing.JLabel" name="ImgLogo">
               <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/proyecto1/IcnInicio.png"/>
+                  <Image iconType="3" name="/proyecto1/Logo.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -559,7 +544,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="Barrapg_4" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="463" max="32767" attributes="0"/>
+                              <EmptySpace pref="332" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="ImgMarc" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="ImgPresen" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
@@ -875,8 +860,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="Barrapg_6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="Barrapg_6" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="exitBtn3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="Barrapg_5" max="32767" attributes="0"/>
@@ -889,7 +874,7 @@
                           <Component id="exitBtn3" min="-2" max="-2" attributes="0"/>
                           <Component id="Barrapg_6" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="440" max="32767" attributes="0"/>
+                      <EmptySpace pref="403" max="32767" attributes="0"/>
                       <Component id="Barrapg_5" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -971,7 +956,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="740" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="768" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1015,7 +1000,7 @@
                           <Component id="exitBtn4" min="-2" max="-2" attributes="0"/>
                           <Component id="Barrapg_8" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="92" max="32767" attributes="0"/>
+                      <EmptySpace pref="55" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="293" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="Barrapg_7" min="-2" max="-2" attributes="0"/>
@@ -1076,7 +1061,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="946" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="815" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">

@@ -42,13 +42,15 @@ public class Interfaz extends javax.swing.JFrame {
         tab1.setBackground(Color.black);
         this.setLocationRelativeTo(this);
 
-        this.pintarImagen(this.Icono1, "src/Img/Compras2.gif");
-        this.pintarImagen(this.Icono2, "src/Img/propiedades.gif");
+        this.pintarImagen(this.ImgLogo, "src/Img/Logo.jpg");
+        this.pintarImagen(this.Icono1, "src/Img/ruta.gif");
+        this.pintarImagen(this.Icono2, "src/Img/mapa-vial.gif");
         this.pintarImagen(this.ImgArch, "src/Img/Archivo.png");
         this.pintarImagen(this.ImgProy, "src/Img/Proyectar.png");
         this.pintarImagen(this.ImgVal, "src/Img/Valor.png");
         this.pintarImagen(this.ImgMarc, "src/Img/Marcar.png");
         this.pintarImagen(this.ImgPresen, "src/Img/Presentacion.png");
+
     }
 
     /**
@@ -331,10 +333,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         Icono1.setBackground(new java.awt.Color(255, 153, 0));
         Icono1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Icono1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Icono2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Icono2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         TextBienv.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
         TextBienv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -369,12 +369,12 @@ public class Interfaz extends javax.swing.JFrame {
         );
 
         Textpag1.setColumns(20);
+        Textpag1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Textpag1.setRows(5);
         Textpag1.setText(" Bienvenido a nuestro exclusivo programa de planificación estratégica \n para la ubicación de sucursales. Estamos emocionados de que te unas \n a este proyecto innovador que tiene como objetivo optimizar la \n presencia de una reconocida cadena de supermercados en Sudamérica. \n\n\n");
         jScrollPane2.setViewportView(Textpag1);
 
-        ImgLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ImgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto1/IcnInicio.png"))); // NOI18N
+        ImgLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto1/Logo.jpg"))); // NOI18N
 
         javax.swing.GroupLayout Pagina1Layout = new javax.swing.GroupLayout(Pagina1);
         Pagina1.setLayout(Pagina1Layout);
@@ -385,21 +385,17 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(Barrapg_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
-                .addComponent(ImgLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Pagina1Layout.createSequentialGroup()
+                .addComponent(ImgLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Pagina1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(TextBienv, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
-                                .addComponent(Icono1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(Icono2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(45, 45, 45))
+                        .addComponent(Icono1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(Icono2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextBienv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46))
         );
         Pagina1Layout.setVerticalGroup(
             Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -409,18 +405,18 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(Barrapg_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Pagina1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(18, 18, 18)
                         .addComponent(TextBienv)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(36, 36, 36)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Icono1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(Icono2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addGroup(Pagina1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Icono1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Icono2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Pagina1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ImgLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ImgLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(Barrapg_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -608,7 +604,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Barrapg_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(Pagina2Layout.createSequentialGroup()
-                        .addContainerGap(463, Short.MAX_VALUE)
+                        .addContainerGap(332, Short.MAX_VALUE)
                         .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ImgMarc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ImgPresen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -732,7 +728,7 @@ public class Interfaz extends javax.swing.JFrame {
         Barrapg_6.setLayout(Barrapg_6Layout);
         Barrapg_6Layout.setHorizontalGroup(
             Barrapg_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 768, Short.MAX_VALUE)
         );
         Barrapg_6Layout.setVerticalGroup(
             Barrapg_6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -744,8 +740,8 @@ public class Interfaz extends javax.swing.JFrame {
         Pagina3Layout.setHorizontalGroup(
             Pagina3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pagina3Layout.createSequentialGroup()
-                .addComponent(Barrapg_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Barrapg_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(Barrapg_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -755,7 +751,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Barrapg_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 440, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 403, Short.MAX_VALUE)
                 .addComponent(Barrapg_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -809,7 +805,7 @@ public class Interfaz extends javax.swing.JFrame {
         Barrapg_7.setLayout(Barrapg_7Layout);
         Barrapg_7Layout.setHorizontalGroup(
             Barrapg_7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 946, Short.MAX_VALUE)
+            .addGap(0, 815, Short.MAX_VALUE)
         );
         Barrapg_7Layout.setVerticalGroup(
             Barrapg_7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -856,7 +852,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Barrapg_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(Barrapg_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
