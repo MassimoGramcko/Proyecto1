@@ -1060,13 +1060,13 @@ public class Interfaz extends javax.swing.JFrame {
 
             int number = Integer.parseInt(s);
             if (number <= 0) {
-                JOptionPane.showMessageDialog(this, "El numero tiene que ser mayor que cero");
+                JOptionPane.showMessageDialog(this, "El número tiene que ser mayor que cero");
                 return;
             }
             Grafo.ObtenerInstancia().T = number;
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese un numero valido");
+            JOptionPane.showMessageDialog(this, "Ingrese un número valido");
 
         }
 
@@ -1178,17 +1178,17 @@ public class Interfaz extends javax.swing.JFrame {
             String estacion = aux.getValor().getNombreEstacion();
             if (estacion.toLowerCase().equals(paradaNombre.toLowerCase())) {
                 if (aux.getValor().getSucursal() == true) {
-                    JOptionPane.showMessageDialog(this, "Se deselecciono esta parada como sucursal");
+                    JOptionPane.showMessageDialog(this, "Se deseleccionó esta parada como sucursal");
                     aux.getValor().setSucursal(false);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Se selecciono esta parada como sucursal");
+                    JOptionPane.showMessageDialog(this, "Se seleccionó esta parada como sucursal");
                     aux.getValor().setSucursal(true);
                 }
                 return;
             }
             aux = aux.getNext();
         }
-        JOptionPane.showMessageDialog(this, "No se encontro la parada");
+        JOptionPane.showMessageDialog(this, "No se encontró la parada");
 
 
     }//GEN-LAST:event_BtnSelecActionPerformed
