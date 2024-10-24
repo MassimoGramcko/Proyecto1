@@ -22,6 +22,10 @@ public class Grafo {
 
         Lista<NodoGrafo> nodos;
         int T;
+
+        public int getT() {
+            return T;
+        }
         String nombreSistemaDeTransporte;
         
 }

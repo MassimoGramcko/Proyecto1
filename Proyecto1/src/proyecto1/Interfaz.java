@@ -242,7 +242,7 @@ public class Interfaz extends javax.swing.JFrame {
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -531,8 +531,18 @@ public class Interfaz extends javax.swing.JFrame {
         ImgVal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         BtnSelec.setText("BtnSelec");
+        BtnSelec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSelecActionPerformed(evt);
+            }
+        });
 
         BtnVer.setText("BtnVer");
+        BtnVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Pagina2Layout = new javax.swing.GroupLayout(Pagina2);
         Pagina2.setLayout(Pagina2Layout);
@@ -974,46 +984,46 @@ public class Interfaz extends javax.swing.JFrame {
                     var estacionesArray = linea.getValue().getAsJsonArray();
 
                     NodoGrafo ultimoNodoLeido = null;
-                for (JsonElement estacionObject : estacionesArray) {
-                    if (estacionObject.isJsonPrimitive()) {
-                        // Manejar estación simple
-                        var estacion = estacionObject.getAsString();
-                        if (ultimoNodoLeido == null) {
-                            ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
-                            Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
-                        } else {
-                            var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
-                            ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
-                            nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
-                            Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
-                            ultimoNodoLeido = nuevoNodo;
-                        }
-                    } else if (estacionObject.isJsonObject()) {
-                        // Manejar objeto con clave-valor
-                        var objetoEstacion = estacionObject.getAsJsonObject();
-                        // Obtener las claves del objeto
-                        for (String clave : objetoEstacion.keySet()) {
-                            String vecino = objetoEstacion.get(clave).getAsString();
-
-                            // Crear nodo para la estación
-                            var nuevoNodo = new NodoGrafo(new Lista(), clave, nombreDeLinea);
-                            Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
-
-                            // Conectar nodos
-                            if (ultimoNodoLeido != null) {
+                    for (JsonElement estacionObject : estacionesArray) {
+                        if (estacionObject.isJsonPrimitive()) {
+                            // Manejar estación simple
+                            var estacion = estacionObject.getAsString();
+                            if (ultimoNodoLeido == null) {
+                                ultimoNodoLeido = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
+                                Grafo.ObtenerInstancia().nodos.Agregar(ultimoNodoLeido);
+                            } else {
+                                var nuevoNodo = new NodoGrafo(new Lista(), estacion, nombreDeLinea);
                                 ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
                                 nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
+                                Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+                                ultimoNodoLeido = nuevoNodo;
                             }
-                            ultimoNodoLeido = nuevoNodo;
+                        } else if (estacionObject.isJsonObject()) {
+                            // Manejar objeto con clave-valor
+                            var objetoEstacion = estacionObject.getAsJsonObject();
+                            // Obtener las claves del objeto
+                            for (String clave : objetoEstacion.keySet()) {
+                                String vecino = objetoEstacion.get(clave).getAsString();
 
-                            // Manejar el vecino
-                            var vecinoNodo = new NodoGrafo(new Lista(), vecino, nombreDeLinea);
-                            Grafo.ObtenerInstancia().nodos.Agregar(vecinoNodo);
-                            nuevoNodo.getVecinos().Agregar(vecinoNodo);
-                            vecinoNodo.getVecinos().Agregar(nuevoNodo); 
+                                // Crear nodo para la estación
+                                var nuevoNodo = new NodoGrafo(new Lista(), clave, nombreDeLinea);
+                                Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
+
+                                // Conectar nodos
+                                if (ultimoNodoLeido != null) {
+                                    ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
+                                    nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
+                                }
+                                ultimoNodoLeido = nuevoNodo;
+
+                                // Manejar el vecino
+                                var vecinoNodo = new NodoGrafo(new Lista(), vecino, nombreDeLinea);
+                                Grafo.ObtenerInstancia().nodos.Agregar(vecinoNodo);
+                                nuevoNodo.getVecinos().Agregar(vecinoNodo);
+                                vecinoNodo.getVecinos().Agregar(nuevoNodo);
+                            }
                         }
                     }
-                }
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
@@ -1047,7 +1057,7 @@ public class Interfaz extends javax.swing.JFrame {
         String s = (String) JOptionPane.showInputDialog(
                 this,
                 "\n Introduzca el valor de t \n"
-                + "", 
+                + "",
                 "",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
@@ -1072,57 +1082,58 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTActionPerformed
 
     private void BtnMostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostActionPerformed
-        
+
 // Configurar el sistema para usar GraphStream con Swing
-    System.setProperty("org.graphstream.ui", "swing");        
+        System.setProperty("org.graphstream.ui", "swing");
 
-    // Crear un nuevo grafo
-    Graph graph = new SingleGraph("Grafo");        
+        // Crear un nuevo grafo
+        Graph graph = new SingleGraph("Grafo");
 
-    // Obtener la instancia del grafo
-    Grafo grafo = Grafo.ObtenerInstancia();        
-    var aux = grafo.nodos.getHead();        
+        // Obtener la instancia del grafo
+        Grafo grafo = Grafo.ObtenerInstancia();
+        var aux = grafo.nodos.getHead();
 
-    // Recorrer los nodos del grafo
-    while (aux != null) {
-        String estacion = aux.getValor().getNombreEstacion();
+        // Recorrer los nodos del grafo
+        while (aux != null) {
+            String estacion = aux.getValor().getNombreEstacion();
 
-        // Verificar si el nodo ya existe
-        if (graph.getNode(estacion) == null) {
-            graph.addNode(estacion);
-        }
-        
-    // Establecer el nombre del nodo como atributo
-    graph.getNode(estacion).setAttribute("ui.label", estacion);
-    // Establecer la posición de la etiqueta debajo del nodo
-    graph.getNode(estacion).setAttribute("ui.label.position", "bottom");
-
-        var aux2 = aux.getValor().getVecinos().getHead();
-        // Recorrer los vecinos de cada nodo
-        while (aux2 != null) {
-            String vecino = aux2.getValor().getNombreEstacion();
-
-            // Verificar si el nodo vecino ya existe
-            if (graph.getNode(vecino) == null) {
-                graph.addNode(vecino);
+            // Verificar si el nodo ya existe
+            if (graph.getNode(estacion) == null) {
+                graph.addNode(estacion);
             }
 
-            // Verificar si la arista ya existe
-            if (graph.getEdge(estacion + "-" + vecino) == null && graph.getEdge(vecino + "-" + estacion) == null) {
-                graph.addEdge(estacion + "-" + vecino, estacion, vecino);
+            // Establecer el nombre del nodo como atributo
+            graph.getNode(estacion).setAttribute("ui.label", estacion);
+            // Establecer la posición de la etiqueta debajo del nodo
+            graph.getNode(estacion).setAttribute("ui.label.position", "bottom");
+            if (aux.getValor().getSucursal()) {
+                graph.getNode(estacion).setAttribute("ui.style", "fill-color: red;");
             }
 
-            aux2 = aux2.getNext();
+            var aux2 = aux.getValor().getVecinos().getHead();
+            // Recorrer los vecinos de cada nodo
+            while (aux2 != null) {
+                String vecino = aux2.getValor().getNombreEstacion();
+
+                // Verificar si el nodo vecino ya existe
+                if (graph.getNode(vecino) == null) {
+                    graph.addNode(vecino);
+                }
+
+                // Verificar si la arista ya existe
+                if (graph.getEdge(estacion + "-" + vecino) == null && graph.getEdge(vecino + "-" + estacion) == null) {
+                    graph.addEdge(estacion + "-" + vecino, estacion, vecino);
+                }
+
+                aux2 = aux2.getNext();
+            }
+
+            aux = aux.getNext();
         }
 
-        aux = aux.getNext();
-    }
+        Viewer viewer = graph.display();
+        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
 
-    
-    Viewer viewer = graph.display();
-    viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
-        
-    
 
     }//GEN-LAST:event_BtnMostActionPerformed
 
@@ -1132,7 +1143,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnMostMouseEntered
 
     private void BtnMostMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMostMouseExited
-       BtnMost.setBackground(new Color(51, 51, 51));
+        BtnMost.setBackground(new Color(51, 51, 51));
         BtnMost.setForeground(Color.white);
     }//GEN-LAST:event_BtnMostMouseExited
 
@@ -1155,6 +1166,77 @@ public class Interfaz extends javax.swing.JFrame {
         BtnT.setBackground(new Color(51, 51, 51));
         BtnT.setForeground(Color.white);
     }//GEN-LAST:event_BtnTMouseExited
+
+    private void BtnSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSelecActionPerformed
+        // TODO add your handling code here:
+        String paradaNombre = (String) JOptionPane.showInputDialog(
+                this,
+                "\n Ingrese su sucursal \n"
+                + "",
+                "",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                null,
+                "");
+        Grafo grafo = Grafo.ObtenerInstancia();
+        var aux = grafo.nodos.getHead();
+
+        // Recorrer los nodos del grafo
+        while (aux != null) {
+            String estacion = aux.getValor().getNombreEstacion();
+            if (estacion.toLowerCase().equals(paradaNombre.toLowerCase())) {
+                if (aux.getValor().getSucursal() == true) {
+                    JOptionPane.showMessageDialog(this, "Se deselecciono esta parada como sucursal");
+                    aux.getValor().setSucursal(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Se selecciono esta parada como sucursal");
+                    aux.getValor().setSucursal(true);
+                }
+                return;
+            }
+            aux = aux.getNext();
+        }
+        JOptionPane.showMessageDialog(this, "No se encontro la parada");
+
+
+    }//GEN-LAST:event_BtnSelecActionPerformed
+
+    private void BtnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerActionPerformed
+        
+        var grafo = Grafo.ObtenerInstancia();
+        if (grafo.getT() == 0){
+            JOptionPane.showMessageDialog(this, "No se puede cubrir ninguna sucursal si T = 0");
+            return;
+        }
+            
+        Object[] options = {"Profundidad", "Anchura", "Cancelar"};
+        
+        
+        int choice = JOptionPane.showOptionDialog(
+                this, 
+                "Do you want to proceed?", 
+                "Custom Options",
+                JOptionPane.YES_NO_CANCEL_OPTION, 
+                JOptionPane.QUESTION_MESSAGE, 
+                null,
+                options,
+                options[2] 
+        );
+
+
+        if (choice == JOptionPane.YES_OPTION) {
+
+            JOptionPane.showMessageDialog(this, "Buscando por profundidad...");
+            
+            
+        } else if (choice == JOptionPane.NO_OPTION) {
+            JOptionPane.showMessageDialog(this, "Buscando por anchura...");
+            
+            
+        } else {
+            JOptionPane.showMessageDialog(this, "Cancelado.");
+        }
+    }//GEN-LAST:event_BtnVerActionPerformed
 
     /**
      * @param args the command line arguments

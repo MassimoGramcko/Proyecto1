@@ -757,11 +757,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="BtnSelec"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSelecActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BtnVer">
               <Properties>
                 <Property name="text" type="java.lang.String" value="BtnVer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnVerActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
