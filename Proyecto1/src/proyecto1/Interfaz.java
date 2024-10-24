@@ -541,6 +541,14 @@ public class Interfaz extends javax.swing.JFrame {
         BtnSelec.setForeground(new java.awt.Color(255, 255, 255));
         BtnSelec.setText("Colocar Sucursal");
         BtnSelec.setBorder(null);
+        BtnSelec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnSelecMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnSelecMouseExited(evt);
+            }
+        });
         BtnSelec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSelecActionPerformed(evt);
@@ -552,6 +560,14 @@ public class Interfaz extends javax.swing.JFrame {
         BtnVer.setForeground(new java.awt.Color(255, 255, 255));
         BtnVer.setText("Ver cobertura ");
         BtnVer.setBorder(null);
+        BtnVer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnVerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnVerMouseExited(evt);
+            }
+        });
         BtnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnVerActionPerformed(evt);
@@ -619,7 +635,7 @@ public class Interfaz extends javax.swing.JFrame {
                             .addComponent(BtnMost, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BtnVer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                        .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BtnT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ImgVal, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(53, 53, 53))
@@ -1283,6 +1299,26 @@ public class Interfaz extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BtnVerActionPerformed
+
+    private void BtnSelecMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSelecMouseEntered
+        BtnSelec.setBackground(Color.white);
+        BtnSelec.setForeground(Color.black);
+    }//GEN-LAST:event_BtnSelecMouseEntered
+
+    private void BtnSelecMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSelecMouseExited
+        BtnSelec.setBackground(new Color(51, 51, 51));
+        BtnSelec.setForeground(Color.white);
+    }//GEN-LAST:event_BtnSelecMouseExited
+
+    private void BtnVerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnVerMouseEntered
+        BtnVer.setBackground(Color.white);
+        BtnVer.setForeground(Color.black);
+    }//GEN-LAST:event_BtnVerMouseEntered
+
+    private void BtnVerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnVerMouseExited
+        BtnVer.setBackground(new Color(51, 51, 51));
+        BtnVer.setForeground(Color.white);
+    }//GEN-LAST:event_BtnVerMouseExited
 
     public void busquedaporprofundidad(boolean[] visited, NodoGrafo vertice) {
 
