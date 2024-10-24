@@ -47,6 +47,8 @@ public class Interfaz extends javax.swing.JFrame {
         this.pintarImagen(this.ImgArch, "src/Img/Archivo.png");
         this.pintarImagen(this.ImgProy, "src/Img/Proyectar.png");
         this.pintarImagen(this.ImgVal, "src/Img/Valor.png");
+        this.pintarImagen(this.ImgMarc, "src/Img/Marcar.png");
+        this.pintarImagen(this.ImgPresen, "src/Img/Presentacion.png");
     }
 
     /**
@@ -92,6 +94,8 @@ public class Interfaz extends javax.swing.JFrame {
         ImgVal = new javax.swing.JLabel();
         BtnSelec = new javax.swing.JButton();
         BtnVer = new javax.swing.JButton();
+        ImgMarc = new javax.swing.JLabel();
+        ImgPresen = new javax.swing.JLabel();
         Pagina3 = new javax.swing.JPanel();
         exitBtn3 = new javax.swing.JPanel();
         exitTxt3 = new javax.swing.JLabel();
@@ -445,7 +449,7 @@ public class Interfaz extends javax.swing.JFrame {
         BtnRed.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         BtnRed.setForeground(new java.awt.Color(255, 255, 255));
         BtnRed.setText("Cargar Red");
-        BtnRed.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnRed.setBorder(null);
         BtnRed.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BtnRedMouseEntered(evt);
@@ -464,7 +468,7 @@ public class Interfaz extends javax.swing.JFrame {
         BtnMost.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         BtnMost.setForeground(new java.awt.Color(255, 255, 255));
         BtnMost.setText("Mostrar Grafo");
-        BtnMost.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnMost.setBorder(null);
         BtnMost.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BtnMostMouseEntered(evt);
@@ -483,7 +487,7 @@ public class Interfaz extends javax.swing.JFrame {
         BtnT.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         BtnT.setForeground(new java.awt.Color(255, 255, 255));
         BtnT.setText("Establecer T");
-        BtnT.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnT.setBorder(null);
         BtnT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BtnTMouseEntered(evt);
@@ -532,14 +536,22 @@ public class Interfaz extends javax.swing.JFrame {
 
         ImgVal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        BtnSelec.setText("BtnSelec");
+        BtnSelec.setBackground(new java.awt.Color(51, 51, 51));
+        BtnSelec.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        BtnSelec.setForeground(new java.awt.Color(255, 255, 255));
+        BtnSelec.setText("Colocar Sucursal");
+        BtnSelec.setBorder(null);
         BtnSelec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSelecActionPerformed(evt);
             }
         });
 
-        BtnVer.setText("BtnVer");
+        BtnVer.setBackground(new java.awt.Color(51, 51, 51));
+        BtnVer.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        BtnVer.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVer.setText("Ver cobertura ");
+        BtnVer.setBorder(null);
         BtnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnVerActionPerformed(evt);
@@ -555,24 +567,29 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Barrapg_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(Pagina2Layout.createSequentialGroup()
-                        .addContainerGap(344, Short.MAX_VALUE)
+                        .addContainerGap(304, Short.MAX_VALUE)
+                        .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ImgMarc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImgPresen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnVer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnSelec, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
-                        .addGap(68, 68, 68)
+                            .addComponent(BtnSelec, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(Pagina2Layout.createSequentialGroup()
-                                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(ImgArch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ImgProy, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(BtnMost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnRed, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)))
+                                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ImgArch, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ImgProy, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BtnRed, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtnMost, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(Pagina2Layout.createSequentialGroup()
-                                .addComponent(ImgVal, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(BtnT, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(ImgVal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BtnT, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -584,26 +601,31 @@ public class Interfaz extends javax.swing.JFrame {
                         .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(exitBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Barrapg_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(65, 65, 65)
                         .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnRed, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnSelec, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(Pagina2Layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(BtnRed, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ImgMarc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtnSelec, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(ImgArch, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
                 .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Pagina2Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ImgProy, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BtnMost, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ImgProy, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pagina2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnVer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BtnT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ImgVal, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53))
+                    .addGroup(Pagina2Layout.createSequentialGroup()
+                        .addComponent(ImgPresen, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(Pagina2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnT, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ImgVal, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
                 .addComponent(Barrapg_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1174,7 +1196,6 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTMouseExited
 
     private void BtnSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSelecActionPerformed
-        // TODO add your handling code here:
         String paradaNombre = (String) JOptionPane.showInputDialog(
                 this,
                 "\n Ingrese su sucursal \n"
@@ -1335,6 +1356,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel Icono1;
     private javax.swing.JLabel Icono2;
     private javax.swing.JLabel ImgArch;
+    private javax.swing.JLabel ImgMarc;
+    private javax.swing.JLabel ImgPresen;
     private javax.swing.JLabel ImgProy;
     private javax.swing.JLabel ImgVal;
     private javax.swing.JPanel Inicio;
@@ -1367,4 +1390,3 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel tab4;
     // End of variables declaration//GEN-END:variables
 }
-
