@@ -24,7 +24,12 @@ import org.graphstream.ui.view.Viewer;
 
 /**
  *
- * @author massi
+ * @author Maassimo Gramcko
+ * @author Alessandro Gramcko
+ * @author Andrea Pareles
+ * @author Diego Tamayo
+ * 
+ * 
  */
 public class Interfaz extends javax.swing.JFrame {
 
