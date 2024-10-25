@@ -1020,6 +1020,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_Pagina4MouseDragged
 
     private void BtnRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRedActionPerformed
+        //selector de archivos
         var chooser = new JFileChooser();
         chooser.showOpenDialog(null);
 
@@ -1028,6 +1029,8 @@ public class Interfaz extends javax.swing.JFrame {
         if (file != null) {
             try {
                 var nombre = file.getName();
+                
+                //Establecer valor T en Grafo según el nombre del archivo
                 if (nombre == "caracas") {
                     Grafo.ObtenerInstancia().T = 3;
                 } else if (nombre == "bogota") {
@@ -1035,7 +1038,8 @@ public class Interfaz extends javax.swing.JFrame {
                 }
 
                 var contenido = new String(Files.readAllBytes(file.toPath()));
-
+                
+                //Parsear el contenido JSON
                 JsonParser parser = new JsonParser();
                 var element = parser.parse(contenido);
                 var sistemaDeTransporteObjecto = element.getAsJsonObject().entrySet();
@@ -1043,6 +1047,8 @@ public class Interfaz extends javax.swing.JFrame {
                 Grafo.ObtenerInstancia().nombreSistemaDeTransporte = sistemaDeTransporte.getKey();
 
                 var lineas = sistemaDeTransporte.getValue().getAsJsonArray();
+                
+                // Iterar sobre cada línea
                 for (JsonElement lineaElement : lineas) {
                     var lineaObjeto = lineaElement.getAsJsonObject().entrySet();
                     var linea = lineaObjeto.iterator().next();
@@ -1053,6 +1059,7 @@ public class Interfaz extends javax.swing.JFrame {
                     NodoGrafo ultimoNodoLeido = null;
                     for (JsonElement estacionObject : estacionesArray) {
                         if (estacionObject.isJsonPrimitive()) {
+                            
                             // Manejar estación simple
                             var estacion = estacionObject.getAsString();
                             if (ultimoNodoLeido == null) {
@@ -1063,7 +1070,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 ultimoNodoLeido.getVecinos().Agregar(nuevoNodo);
                                 nuevoNodo.getVecinos().Agregar(ultimoNodoLeido);
                                 Grafo.ObtenerInstancia().nodos.Agregar(nuevoNodo);
-                                ultimoNodoLeido = nuevoNodo;
+                                ultimoNodoLeido = nuevoNodo; //Atualiza el ultimo nodo
                             }
                         } else if (estacionObject.isJsonObject()) {
                             // Manejar objeto con clave-valor
@@ -1093,7 +1100,7 @@ public class Interfaz extends javax.swing.JFrame {
                     }
                 }
             } catch (IOException ex) {
-                 JOptionPane.showMessageDialog(this, "error");
+                JOptionPane.showMessageDialog(this, "error");
             }
         }
 
@@ -1283,7 +1290,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         int choice = JOptionPane.showOptionDialog(
                 this,
-                "Do you want to proceed?",
+                "Con cual quieres proceder?",
                 "Custom Options",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
