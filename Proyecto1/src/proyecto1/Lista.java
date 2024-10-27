@@ -6,7 +6,12 @@ package proyecto1;
 
 /**
  *
- * @author massi
+ * @author Maassimo Gramcko
+ * @author Alessandro Gramcko
+ * @author Andrea Pareles
+ * @author Diego Tamayo
+ * 
+ * 
  */
 public class Lista<T> {
 
