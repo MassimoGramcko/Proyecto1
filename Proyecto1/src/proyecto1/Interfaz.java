@@ -28,8 +28,8 @@ import org.graphstream.ui.view.Viewer;
  * @author Alessandro Gramcko
  * @author Andrea Pareles
  * @author Diego Tamayo
- * 
- * 
+ *
+ *
  */
 public class Interfaz extends javax.swing.JFrame {
 
@@ -1025,6 +1025,13 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_Pagina4MouseDragged
 
     private void BtnRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRedActionPerformed
+        /**
+         * Método que maneja la acción del botón para seleccionar un archivo y
+         * procesarlo.
+         *
+         * @param evt Evento de acción generado por el botón.
+         */
+
         //selector de archivos
         var chooser = new JFileChooser();
         chooser.showOpenDialog(null);
@@ -1034,7 +1041,7 @@ public class Interfaz extends javax.swing.JFrame {
         if (file != null) {
             try {
                 var nombre = file.getName();
-                
+
                 //Establecer valor T en Grafo según el nombre del archivo
                 if (nombre == "caracas") {
                     Grafo.ObtenerInstancia().T = 3;
@@ -1043,7 +1050,7 @@ public class Interfaz extends javax.swing.JFrame {
                 }
 
                 var contenido = new String(Files.readAllBytes(file.toPath()));
-                
+
                 //Parsear el contenido JSON
                 JsonParser parser = new JsonParser();
                 var element = parser.parse(contenido);
@@ -1052,7 +1059,7 @@ public class Interfaz extends javax.swing.JFrame {
                 Grafo.ObtenerInstancia().nombreSistemaDeTransporte = sistemaDeTransporte.getKey();
 
                 var lineas = sistemaDeTransporte.getValue().getAsJsonArray();
-                
+
                 // Iterar sobre cada línea
                 for (JsonElement lineaElement : lineas) {
                     var lineaObjeto = lineaElement.getAsJsonObject().entrySet();
@@ -1064,7 +1071,7 @@ public class Interfaz extends javax.swing.JFrame {
                     NodoGrafo ultimoNodoLeido = null;
                     for (JsonElement estacionObject : estacionesArray) {
                         if (estacionObject.isJsonPrimitive()) {
-                            
+
                             // Manejar estación simple
                             var estacion = estacionObject.getAsString();
                             if (ultimoNodoLeido == null) {
@@ -1124,7 +1131,13 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnRedActionPerformed
 
     private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTActionPerformed
-
+        /**
+         * Muestra un cuadro de diálogo para ingresar un valor de t, valida que
+         * sea un número entero mayor a cero y, si es válido, lo asigna al campo
+         * T de la instancia de Grafo.
+         */
+        
+        // Solicitar el valor de t
         String s = (String) JOptionPane.showInputDialog(
                 this,
                 "\n Introduzca el valor de t \n"
@@ -1138,10 +1151,13 @@ public class Interfaz extends javax.swing.JFrame {
         try {
 
             int number = Integer.parseInt(s);
+
+            // Validar que el número sea mayor que cero
             if (number <= 0) {
                 JOptionPane.showMessageDialog(this, "El número tiene que ser mayor que cero");
                 return;
             }
+            // Asignar el valor válido al campo T de la instancia de Grafo
             Grafo.ObtenerInstancia().T = number;
 
         } catch (NumberFormatException e) {
