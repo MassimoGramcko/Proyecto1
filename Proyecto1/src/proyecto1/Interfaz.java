@@ -1132,11 +1132,13 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void BtnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTActionPerformed
         /**
-         * Muestra un cuadro de diálogo para ingresar un valor de t, valida que
-         * sea un número entero mayor a cero y, si es válido, lo asigna al campo
-         * T de la instancia de Grafo.
+         * Maneja la acción del botón para mostrar un cuadro de diálogo de
+         * entrada, valida que el valor ingresado sea un número entero mayor que
+         * cero y, si es válido, lo asigna al campo T de la instancia de Grafo.
+         *
+         * @param evt El evento de acción generado por el botón.
          */
-        
+
         // Solicitar el valor de t
         String s = (String) JOptionPane.showInputDialog(
                 this,
@@ -1169,8 +1171,14 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTActionPerformed
 
     private void BtnMostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostActionPerformed
+        /**
+         * Maneja la acción del botón para mostrar un grafo utilizando
+         * GraphStream.
+         *
+         * @param evt El evento de acción generado por el botón.
+         */
 
-// Configurar el sistema para usar GraphStream con Swing
+        // Configurar el sistema para usar GraphStream con Swing
         System.setProperty("org.graphstream.ui", "swing");
 
         // Crear un nuevo grafo
@@ -1255,6 +1263,14 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTMouseExited
 
     private void BtnSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSelecActionPerformed
+        /**
+         * Maneja la acción del botón para seleccionar o deseleccionar una
+         * parada como sucursal.
+         *
+         * @param evt El evento de acción generado por el botón.
+         */
+
+        //Solicitar el nombre de la parada
         String paradaNombre = (String) JOptionPane.showInputDialog(
                 this,
                 "\n Ingrese su sucursal \n"
@@ -1272,9 +1288,11 @@ public class Interfaz extends javax.swing.JFrame {
             String estacion = aux.getValor().getNombreEstacion();
             if (estacion.toLowerCase().equals(paradaNombre.toLowerCase())) {
                 if (aux.getValor().getSucursal() == true) {
+                    //Deseleccionar
                     JOptionPane.showMessageDialog(this, "Se deseleccionó esta parada como sucursal");
                     aux.getValor().setSucursal(false);
                 } else {
+                    //Seleccionar
                     JOptionPane.showMessageDialog(this, "Se seleccionó esta parada como sucursal");
                     aux.getValor().setSucursal(true);
                 }
@@ -1282,13 +1300,21 @@ public class Interfaz extends javax.swing.JFrame {
             }
             aux = aux.getNext();
         }
+        //Si la parada no se encuentra
         JOptionPane.showMessageDialog(this, "No se encontró la parada");
 
 
     }//GEN-LAST:event_BtnSelecActionPerformed
 
     private void BtnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerActionPerformed
-
+        /**
+         * Maneja la acción del botón para verificar las sucursales y proceder
+         * con una búsqueda por profundidad o anchura.
+         *
+         * @param evt El evento de acción generado por el botón.
+         */
+        
+        //Verificar si el valor de T es igual a 0
         var grafo = Grafo.ObtenerInstancia();
         if (grafo.getT() == 0) {
             JOptionPane.showMessageDialog(this, "No se puede cubrir ninguna sucursal si T = 0");
@@ -1296,17 +1322,20 @@ public class Interfaz extends javax.swing.JFrame {
         }
         var sucursales = new Lista<NodoGrafo>();
         var aux = grafo.nodos.getHead();
+        
+        //Recorrer los nodos del grafo para encontrar sucursales
         while (aux != null) {
             if (aux.getValor().getSucursal()) {
                 sucursales.Agregar(aux.getValor());
             }
             aux = aux.getNext();
         }
+        //Verificar si hay sucursales
         if (sucursales.getSize() == 0) {
             JOptionPane.showMessageDialog(this, "No hay sucursales");
             return;
         }
-
+        //Lo que deseas selecionar
         Object[] options = {"Profundidad", "Anchura", "Cancelar"};
 
         int choice = JOptionPane.showOptionDialog(
