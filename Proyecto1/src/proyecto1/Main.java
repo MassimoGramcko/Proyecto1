@@ -6,16 +6,21 @@ package proyecto1;
 
 /**
  *
- * @author massi
+ * @author Maassimo Gramcko
+ * @author Alessandro Gramcko
+ * @author Andrea Pareles
+ * @author Diego Tamayo
+ * 
+ * 
  */
-public class Proyecto1 {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("");
-        // TODO code application logic here
+        Grafo.ObtenerInstancia().nodos = new Lista<NodoGrafo>();
+        Grafo.ObtenerInstancia().esNulo = true;
+        Grafo.ObtenerInstancia().nombreSistemaDeTransporte = "";
     }
-    
 }
